@@ -7,12 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const store = configureStore();
   const root = document.getElementById('root');
-  
-  // window.signout = logout;
+  // const mike = {id: 123, username: 'mike', password:'123456', email:'123', birthday: '20200101'};
+  // window.logout = logout;
   // window.signup = signup;
   // window.login = login;
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
+  // window.login(mike);
   ReactDOM.render(<Root store={store}/>, root);
   
 });
