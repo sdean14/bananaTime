@@ -1,4 +1,5 @@
 import React from 'react';
+import {  Route,  Switch,  Link} from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -63,11 +64,13 @@ class SessionForm extends React.Component {
 
   render() {
     return (
+      <div className='header-for-form'>
+        <p className='splash-header'>Connect with friends and the world around you on Tomobook.</p>
+
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Tomobook!
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
+          Please {this.props.formType} or <button>{this.props.navLink}</button>
           {this.renderErrors()}
           <div className="login-form">
             <br/>
@@ -76,7 +79,7 @@ class SessionForm extends React.Component {
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
-              />
+                />
             </label>
             <br/>
             <label>Password:
@@ -84,13 +87,14 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-              />
+                />
             </label>
             {this.renderSignup()}
             <br/>
-            <input type="submit" className="session-submit" value={this.props.formType} />
+            <button type="submit" className="session-submit" >{this.props.formType}</button>
           </div>
         </form>
+      </div>
       </div>
     );
   }
