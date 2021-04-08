@@ -33,6 +33,9 @@ class SessionForm extends React.Component {
       password: '123456',
     });
   }
+  componentDidMount(){
+    if (this.props.errors.length) { this.props.clearSessionErrors()}
+  }
 
   renderErrors() {
     return(
@@ -45,7 +48,7 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
-
+ 
   renderSignup(){
     if(this.props.formType === 'Sign Up'){
 
