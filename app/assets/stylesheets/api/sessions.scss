@@ -108,8 +108,33 @@
     background: lightblue;
   }
   
-  
+  .demo-button:hover, .session-submit:hover {
+    background: #1872e7;
+  }
+  .button-create:hover {
+    background: #3da828;
+  }
+
   .signup-border, .border {
     border-top: 1px solid #cecccc;
     width: 100%;
+  }
+
+  // footer
+.footer-copyright {
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Roboto', sans-serif;
+  color: gray;
+} 
+
+.footer-copyright p {
+  padding-right: 5px;
+  
+}
+  
+  .githubcat{
+    background-image: asset-url('gitbubicon.png');
+    height: 16px;
+    width: 16px;
   }
