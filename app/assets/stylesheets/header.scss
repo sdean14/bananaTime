@@ -1,0 +1,29 @@
+// .im-header {
+//     display: flex;
+//     background: #3973fa;
+//     width: 100%;
+//     justify-content: space-between;
+// }
+.header-group {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    background: #3973fa;
+    width: 100%;
+}
+.header-logo {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    // letter-spacing: 2px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bolder;
+    display: flex;
+
+}
+
+
+.header-name {
+    color: #fff;
+    padding: 15px;;
+}

@@ -5,6 +5,7 @@ import LogInFormContainer from './session_form/login_form_container'
 import SignUpFormContainer from './session_form/signup_form_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
+
 const NoMatchPage = () => {
   return (
     <div className='no-match-container'>
@@ -17,10 +18,10 @@ const NoMatchPage = () => {
 
 const App = () => (
   <div>
-    <header>
-      <Link to="/" className="header-link">
-        <h1>Tomobook</h1>
-      </Link>
+    <header className='im-header'>
+      {/* <Link to="/" className="header-link">
+        <h1 className='header-logo'>Tomobook</h1>
+      </Link> */}
       <GreetingContainer />
     </header>
     <Switch>

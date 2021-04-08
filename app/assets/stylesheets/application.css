@@ -13,8 +13,8 @@
  *= require_self
  *= require_tree .
  */
- @import "./base_style/reset.scss";
- @import "./api/sessions.scss";
+ /* @import "./base_style/reset.scss"; */
+ /* @import "./api/sessions.scss"; */
  
 
  /* PHASE 0: Reset */
