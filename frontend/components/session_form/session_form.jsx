@@ -5,12 +5,13 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
       email: '',
+      password: '',
+      username: '',
       birthday: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(field) {
@@ -25,6 +26,13 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
+  handleDemo(e){
+    e.preventDefault();
+    this.props.processDemo({
+      email: 'demouser@tomobook.com',
+      password: '123456',
+    });
+  }
 
   renderErrors() {
     return(
@@ -42,24 +50,20 @@ class SessionForm extends React.Component {
     if(this.props.formType === 'Sign Up'){
 
       return(
-        <div>
-          <label>
+        <div className="login-form">
           <input type="text"
                 placeholder='username'
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
-                required
-              />
-          </label>
+                required />
             <br/>
           <label>Birthday: 
           <input type="date"
                 value={this.state.birthday}
                 onChange={this.update('birthday')}
                 className="login-input"
-                required
-              />
+                required />
           </label>
         </div>
       )
@@ -69,16 +73,15 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className='header-for-form'>
-        <p className='splash-header'>
+        <div className='splash-header'>
           <h1 className='splash-logo'>Tomobook</h1>
           <h2 className='splash-title'>Connect with friends and the world around you on Tomobook.</h2>
-        </p>
+        </div>
             
 
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
-          {/* Please {this.props.formType}  */}
           {this.renderErrors()}
           <div className="login-form">
             <br/>
@@ -87,21 +90,19 @@ class SessionForm extends React.Component {
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="login-input"
-                required
-                />
+                required />
             <br/>
               <input type="password"
                 placeholder="Password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-                required
-                />
+                required />
             {this.renderSignup()}
             <br/>
             <button type="submit" className="session-submit" >{this.props.formType}</button>
           </div>
-        <button className="demo-button">Demo</button>
+        <button className="demo-button" onClick={this.handleDemo}>Demo</button>
         </form>
         <div className='signup-border'></div>
         <button className="button-create">{this.props.navLink}</button>
