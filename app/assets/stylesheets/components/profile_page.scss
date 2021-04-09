@@ -1,5 +1,6 @@
 .profile-page {
   background: lightblue;
+  font-family: 'Roboto', sans-serif;
   // display: flex;
 }
 //header
@@ -15,6 +16,7 @@
   // display: flex;
   height: 350px;
   width: 1040px;
+  border-radius: 10px;
 }
 
 .profile-img {
@@ -58,6 +60,7 @@
   width: 360px;
   min-height: 400px;
   margin: 10px;
+  border-radius: 10px;
 }
 
 .right-body {
@@ -65,4 +68,6 @@
   width: 500px;
   min-height: 400px;
   margin: 10px;
+  border-radius: 10px;
 }
+

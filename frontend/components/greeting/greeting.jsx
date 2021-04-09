@@ -10,6 +10,7 @@ const Greeting = ({ currentUser, logout }) => {
         <h1 className='header-logo'>Tomobook</h1>
       </Link>
       <h2 className="header-name">Hi, {currentUser.username}!</h2>
+      <Link to={`/users/${currentUser.id}/show`}>user profile</Link>
       <button className="header-logout-button" onClick={logout}>Log Out</button>
     </hgroup>
   );

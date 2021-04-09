@@ -16,6 +16,9 @@ class ProfileForm extends React.Component {
             <h2>Intro</h2>
             <p>Bithday {this.state.birthday}</p>
             <p>From</p>
+            <Link to={`/users/${this.state.id}/edit`}>
+                <button className='profile-edit-button' type='submit'>Update Profile</button>
+            </Link>
         </div>
     )
 }
