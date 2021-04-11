@@ -12,15 +12,14 @@ class ProfileForm extends React.Component {
   }
 
   renderFriendButton(){
-    const {user, follow, unfollow, currentUserId } = this.props;
+    const {follow, unfollow, currentUserId } = this.props;
     let friendButton;
-    if (currentUserId === user.id || !currentUserId) {
+    if (currentUserId === this.state.id || !currentUserId) {
         friendButton = null
     } else if (user.following) {
         <a onClick={() => unfollow(user.followId)} className="follow-button">UnFriend</a>
     } else {
-        <a onClick={() => follow({ requested_id: user.id, user_id: currentUserId })} className="follow-button">Friend</a>
-                
+        <a onClick={() => follow({ requested_id: user.id, user_id: currentUserId })} className="follow-button">Friend</a>     
     }
     return(
         <div>{friendButton} </div>

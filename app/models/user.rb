@@ -41,6 +41,10 @@ class User < ApplicationRecord
     through: :friends_you_follow,
     source: :following
 
+    #posts
+    has_many :posts,
+    foreign_key: :author_id,
+    class_name: :"Post"
 
  
 
