@@ -10,6 +10,22 @@ class ProfileForm extends React.Component {
   componentDidMount(){
       this.props.receiveCurrentUser(this.props.match.params.userId)
   }
+
+  renderFriendButton(){
+    const {user, follow, unfollow, currentUserId } = this.props;
+    let friendButton;
+    if (currentUserId === user.id || !currentUserId) {
+        friendButton = null
+    } else if (user.following) {
+        <a onClick={() => unfollow(user.followId)} className="follow-button">UnFriend</a>
+    } else {
+        <a onClick={() => follow({ requested_id: user.id, user_id: currentUserId })} className="follow-button">Friend</a>
+                
+    }
+    return(
+        <div>{friendButton} </div>
+    )
+    }
   renderAbout(){
     return(
         <div>
@@ -29,6 +45,7 @@ class ProfileForm extends React.Component {
                   <div className='cover-img'>cover img</div>
                   <div className='profile-img'>profile icon</div>
                   <h1 className='username'>My name is {this.state.username}</h1>
+                  {this.renderFriendButton()}
                   {/* {console.log(this.state.username)} */}
                   <div className='profile-links-container'>
                       {/* link/button to render each page */}

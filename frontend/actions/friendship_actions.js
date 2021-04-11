@@ -1,25 +1,25 @@
-import * as Apitil_user from '../util/friendship_api_util';
+import * as ApiUtil from '../util/friendship_api_util';
 
-export const RECEIVE_FRIENDSHIP = 'RECEIVE_FRIENDSHIP';
-export const REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
+export const FRIEND = 'FRIEND';
+export const UNFRIEND = 'UNFRIEND';
 
-export const receiveFriendship = (friendship) => ({
-  type: RECEIVE_FRIENDSHIP,
-  friendship
+export const receiveFriendship = (follow) => ({
+  type: FRIEND,
+  follow
 });
 
-export const removeFriendship = (friendships) => ({
-  type: REMOVE_FRIENDSHIP,
-  friendships
+export const removeFriendship = (follow) => ({
+  type: UNFRIEND,
+  follow
 });
 
-export const createFriend = (friendship) => dispatch => (
-  ApiUtil.createFriend(friendship)
-    .then(friendship => dispatch( receiveFriendship(friendship)))
+export const createFriend = (ids) => dispatch => (
+  ApiUtil.createFriend(ids)
+    .then(follow => dispatch( receiveFriendship(follow)))
 );
 
 
-export const deleteFriend = (friendship) => dispatch => (
-  ApiUtil.deleteFriend(friendship)
-    .then(friendship => dispatch( removeFriendship(friendship)))
+export const deleteFriend = (followId) => dispatch => (
+  ApiUtil.deleteFriend(followId)
+    .then(follow => dispatch( removeFriendship(follow)))
 );
