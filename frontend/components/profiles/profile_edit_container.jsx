@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { receiveCurrentUser, updateProfile } from '../../actions/session_action';
+import { receiveCurrentUser } from '../../actions/session_action';
+import { updateProfile } from '../../actions/user_actions'
 import ProfileEditForm from './profile_edit_form'
 // import { Link } from 'react-router-dom';
 

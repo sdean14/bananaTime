@@ -14,3 +14,9 @@ User.delete_all
     password: "123456",
     birthday: "11/11/1111"
 )
+User.create(
+    username: "watson dean",
+    email: "watson@tomobook.com",
+    password: "123456",
+    birthday: "11/11/1111"
+)

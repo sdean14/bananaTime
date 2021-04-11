@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/session_api_util';
-import * as APIUtil_user from  '../util/user_api_util'
+// import * as APIUtil_user from  '../util/user_api_util'
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -47,14 +47,14 @@ export const signup = user => dispatch => (
     ))
   );
 
-  //profile
-  export const updateProfile = user => dispatch => (
-    APIUtil_user.updateProfile(user)
-      .then(user => dispatch(receiveCurrentUser(user)))
-  );
+  // //profile
+  // export const updateProfile = user => dispatch => (
+  //   APIUtil_user.updateProfile(user)
+  //     .then(user => dispatch(receiveCurrentUser(user)))
+  // );
   
-  export const fetchProfile = userId => dispatch => (
-    APIUtil_user.fetchProfile(userId)
-      .then(user => dispatch(receiveCurrentUser(user)))
-  );
+  // export const fetchUser = userId => dispatch => (
+  //   APIUtil_user.fetchUser(userId)
+  //     .then(user => dispatch(receiveCurrentUser(user)))
+  // );
   

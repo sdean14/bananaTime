@@ -1,4 +1,9 @@
 class Api::UsersController < ApplicationController
+  
+  def index
+    @users = User.all
+  end
+
   def create
       @user = User.new(user_params) 
   
@@ -23,6 +28,22 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def follows
+    @user = User.find(params[:id])
+    @list_of_follows = @user.followings
+    render "api/users/show"
+  end
+
+  def followers
+    @user = User.find(Params[:id])
+    @list_of_followes = @user.followers
+    render "api/users/show"
+  end
+
+  def following?(other_user)
+    followings.include?(other_user)
+    # true if you are already following other_user 
+  end
 
   private
 

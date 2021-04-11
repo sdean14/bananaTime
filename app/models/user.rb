@@ -24,6 +24,26 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     attr_reader :password
 
+# --following relation--
+    has_many :friends_you_follow, #followships
+    foreign_key: :requester_id,
+    class_name: :"Friendship"
+    
+    has_many :fanships, #friends_following_you, #
+    foreign_key: :requested_id,
+    class_name: :"Friendship"
+    
+    has_many :followers,
+    through: :fanships, #list of(?)friends_following_you,
+    source: :follower
+
+    has_many :followings, #followees  list of(?) friends you follow
+    through: :friends_you_follow,
+    source: :following
+
+
+ 
+
     # spire
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
