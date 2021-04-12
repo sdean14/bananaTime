@@ -4,6 +4,7 @@ class ProfileEditForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.profile
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
@@ -18,24 +19,26 @@ class ProfileEditForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
     render() {
+        console.log(this.state.username)
         return (
-            <div> this is profile edit page
+            <div> 
                 <form className='profile-edit-form' onSubmit={this.handleSubmit}>
-                    <label>Name
+                    <p>this is profile edit page</p> 
+                    <label>Name:
                     <input
                         type='text'
                         value={this.state.username}
                         onChange={this.update('username')} />
                     </label>
-                    <label>Birthday
+                    <label>Birthday:
                     <input
                         type='date'
                         value={this.state.birthday}
                         onChange={this.update('birthday')} />
                     </label>
-                    <Link to={`/users/${this.state.id}/show`}>
+                    {/* <Link to={`/users/${this.state.id}/show`}> */}
                         <button className='profile-edit-button' type='submit'>Update Profile</button>
-                    </Link>
+                    {/* </Link> */}
 
                 </form>
             </div>

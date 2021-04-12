@@ -6,7 +6,7 @@ import ProfileEditForm from './profile_edit_form'
 // import { Link } from 'react-router-dom';
 
 const mapStateToProps = ( state, ownProps ) => {
-  console.log(state.entities.users)
+  // console.log(state.entities.users)
   return {
     profile: state.entities.users[ownProps.match.params.userId]
   };

@@ -14,7 +14,7 @@ export const receiveUser = (user) => ({
 });
 
 export const fetchUsers = () => dispatch => (
-  PostApiUtil.fetchUsers()
+  ApiUtil.fetchUsers()
     .then(users => dispatch( receiveUsers(users)))
 );
 
@@ -25,7 +25,7 @@ export const fetchUser = (userId) => dispatch => (
 
   //profile
   export const updateProfile = user => dispatch => (
-    ApiUtil_user.updateProfile(user)
+    ApiUtil.updateProfile(user)
       .then(user => dispatch(receiveUser(user)))
   );
   
