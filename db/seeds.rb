@@ -20,3 +20,6 @@ User.create(
     password: "123456",
     birthday: "11/11/1111"
 )
+
+Post.create!(:body => "Body 1", auther_id: 1)
+Post.create!(:body => "Body 2", auther_id: 7)
