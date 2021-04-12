@@ -1,23 +1,26 @@
 
 import { connect } from 'react-redux';
-import { receiveCurrentUser } from '../../actions/session_action';
+import { fetchUsers } from '../../actions/user_actions'
 import { createFriend, deleteFriend } from '../../actions/friendship_actions';
-import ProfileForm from '../profiles/profile_show';
+import FriendshipIndex from './friends_index';
 
-const mapStateToProps = ( state, ownProps ) => {
-  // console.log(state.entities.users[ownProps.match.params.userId])
-  return {
-    currentUser: state.entities.users[ownProps.match.params.userId],
-    currentUserId: state.session.id
-  };
+const mapStateToProps = ({entities, session}) => {
+  console.log(state.session)
+  let usersArr = Object.values(entities.users);
+  let currentUser = session.currentUser;
+
+  return ({
+    users: usersArr,
+    currentUser: currentUser
+  })
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    receiveCurrentUser: (userId) => dispatch(receiveCurrentUser(userId)),
-    createFriend: ids => dispatch(createFriend(ids)),
+    fetchUsers: () => dispatch(fetchUsers()),
+    createFriend: id => dispatch(createFriend(id)),
     deleteFriend: followedId => dispatch(deleteFriend(followedId))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileForm);
+export default connect(mapStateToProps, mapDispatchToProps)(FriendshipIndex);

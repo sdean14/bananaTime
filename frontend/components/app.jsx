@@ -9,7 +9,7 @@ import ProfileShowContainer from './profiles/profile_show_container';
 import PostItemContainer from './posts/post_item_container';
 import PostEditFormContainer from './posts/post_edit_form_container';
 import PostFormContainer from './posts/post_create_form_container'
-
+import FriendshipContainer from './friendships/friendships_container';
 const NoMatchPage = () => {
   return (
     <div className='no-match-container'>
@@ -26,6 +26,7 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
+
       <Route exact path="/" component={PostItemContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} /> 
@@ -33,6 +34,8 @@ const App = () => (
       <Route exact path="/users/:userId/show" component={ProfileShowContainer} />
       <Route exact path="/posts/:postId/edit" component={PostEditFormContainer} />
       <Route exact path="/posts/new" component={PostFormContainer} />
+      
+      <Route exact path="/users/following" component={FriendshipContainer} />
       <Route component={NoMatchPage} />
     </Switch>
   </div>

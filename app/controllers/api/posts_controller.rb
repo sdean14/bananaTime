@@ -24,7 +24,7 @@ class Api::PostsController < ApplicationController
     if @post && @post.update(post_params)
       render :show
     else
-      render json: @post.errors.full_messages, status: 422
+      render json: ["You can't edit this post"], status: 422
     end
   end
 

@@ -1,9 +1,8 @@
-export const createFriend = user => (
+export const createFriend = id => (
   $.ajax({
-    beforeSend: function (xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content')) },
     url: '/api/friendships',
     method: 'POST',
-    data: { follow: ids }
+    data: { id }
   })
   // $.ajax({
   //   method: 'POST',
@@ -12,10 +11,9 @@ export const createFriend = user => (
   // })
 );
 
-export const deleteFriend = followId => (
+export const deleteFriend = id => (
   $.ajax({
-    beforeSend: function (xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content')) },
-    url: `/api/friendships/${followId}`,
+    url: `/api/friendships/${id}`,
     method: 'DELETE'
   })
   // $.ajax({

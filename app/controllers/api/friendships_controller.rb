@@ -6,14 +6,19 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def create
-    @follow = Friendship.new(friendship_params)
+    @follow = Friendship.new
+    @follow.requester_id = current_user.id
+    @follow.requested_id = params[:id]
   if @follow.save 
+    @following = @follow.following #followee =following
     render "api/users/show" 
   end   
   end
 
   def destroy
-    @follow = Friendship.destroy(params[:id])
+    @follow = Friendship.find_by(requester_id: current_user.id, requested_id: params[:id])
+    @following = @follow.following
+    @followi.destroy
     render "api/users/show" 
   end
 

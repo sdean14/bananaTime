@@ -37,7 +37,7 @@ class User < ApplicationRecord
     through: :fanships, #list of(?)friends_following_you,
     source: :follower
 
-    has_many :followings, #followees  list of(?) friends you follow
+    has_many :followings, #follows  list of(?) friends you follow
     through: :friends_you_follow,
     source: :following
 
