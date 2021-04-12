@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const PostIndexItem = props => (
-  <li>
+  <li className='each-posts'>
     <Link to={`{/users/${props.post.auther_id}/show}`}>{}</Link>
     <h2>{props.post.body}</h2>
     <Link to={`/posts/${props.post.id}/edit`}>Edit</Link>
