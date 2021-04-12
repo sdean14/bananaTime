@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import PostIndexItem from './post_index_item'
-import PostForm from './post_form'
+import PostCreateFormContainer from './post_create_form_container'
 
 class PostIndex extends React.Component{
   constructor(props){
     super(props)
-    this.state = this.props.state
+
   }
   componentDidMount() {
     this.props.fetchPosts();
@@ -19,16 +19,16 @@ class PostIndex extends React.Component{
         <div className='wall'>
           <div className='mid-column'>
 
-          <PostForm/>
+          <PostCreateFormContainer/>
           <div className='post'>
             <ul>
               { this.props.posts.map(post => (
                 <PostIndexItem
                 post={post}
-                deletePost={deletePost}
+                deletePost={this.props.deletePost}
                 key={post.id} />
                 ))}
-              mmmm...feed ?
+            
             </ul>
           </div>
         </div>

@@ -4,14 +4,14 @@ import PostIndex from './post_index';
 import {fetchPosts, deletePost} from '../../actions/post_actions';
 
 const mSTP = (state, ownProps) => {
-  let wallId = state.entities
-  console.log(wallId)
+  // let wallId = state.entities
+  console.log(state.entities.users)
   return({
-    // currentUser: state.entities.users[state.session.currentUser],
+    currentUser: state.entities.users[state.session.id],
     // wallUser: state.entities.users[wallId],
     // author: state.entities.users[ownProps.post.author_id],
-    posts: Object.values(state.entities.posts)
-    })
+    posts: Object.values(state.posts)
+  })
 }
 
 const mDTP = (dispatch) => ({

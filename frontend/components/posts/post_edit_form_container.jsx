@@ -23,7 +23,7 @@ class EditPostForm extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
-return( { post: state.entities.posts[ownProps.match.params.postId],
+return( { post: state.posts[ownProps.match.params.postId],
   formType: 'Update Post'})
 };
 

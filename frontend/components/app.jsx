@@ -6,8 +6,9 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileEditContainer from './profiles/profile_edit_container';
 import ProfileShowContainer from './profiles/profile_show_container';
-import PostIndexContainer from './posts/post_item_container';
+import PostItemContainer from './posts/post_item_container';
 import PostEditFormContainer from './posts/post_edit_form_container';
+import PostFormContainer from './posts/post_create_form_container'
 
 const NoMatchPage = () => {
   return (
@@ -25,12 +26,13 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
-      <Route exact path="/" component={PostIndexContainer} />
+      <Route exact path="/" component={PostItemContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} /> 
       <Route exact path="/users/:userId/edit" component={ProfileEditContainer} />
       <Route exact path="/users/:userId/show" component={ProfileShowContainer} />
-      <Route path="/posts/:postId/edit" component={PostEditFormContainer} />
+      <Route exact path="/posts/:postId/edit" component={PostEditFormContainer} />
+      <Route exact path="/posts/new" component={PostFormContainer} />
       <Route component={NoMatchPage} />
     </Switch>
   </div>

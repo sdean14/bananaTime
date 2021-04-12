@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const PostIndexItem = props => (
   <li>
-    <Link to={`{/users/${props.post.auther_id}/show}`}>{state.entities.users[props.post.auther_id]}</Link>
+    <Link to={`{/users/${props.post.auther_id}/show}`}>{}</Link>
     <h2>{props.post.body}</h2>
     <Link to={`/posts/${props.post.id}/edit`}>Edit</Link>
     <button onClick={() => props.deletePost(props.post.id)}>Delete</button>

@@ -7,7 +7,7 @@ class ProfileEditForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.receiveCurrentUser(this.props.match.params.userId)
+        this.props.fetchUser(this.props.match.params.userId)
     }
     handleSubmit(e) {
         e.preventDefault();
