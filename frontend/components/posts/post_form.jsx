@@ -1,20 +1,21 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.post;
     this.state.redirect = null;
-    
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props)
     this.props.action(this.state);
-    this.setState({ redirect: '/'})
+    if (this.props.formType === 'Update Post') {
+      this.setState({ redirect: '/' })
+    }
   }
 
   update(field) {
@@ -22,7 +23,7 @@ class PostForm extends React.Component {
   }
 
   render() {
-    if(this.state.redirect){
+    if (this.state.redirect) {
       return <Redirect to={this.state.redirect}></Redirect>
     }
     return (
@@ -38,9 +39,9 @@ class PostForm extends React.Component {
               placeholder={'What\'s on your mind?'}
             />
           </label>
-          
+
           <button className='button-post' type='submit' value={this.props.formType} >{this.props.formType}</button>
-          
+
         </form>
       </div>
     );

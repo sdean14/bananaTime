@@ -21,5 +21,5 @@ User.create(
     birthday: "11/11/1111"
 )
 
-Post.create!(:body => "Body 1", auther_id: 1)
-Post.create!(:body => "Body 2", auther_id: 7)
+Post.create!(:body => "Body 1", author_id: 1)
+Post.create!(:body => "Body 2", author_id: 7)

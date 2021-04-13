@@ -1,56 +1,60 @@
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
+import { logoutCurrentUser } from '../../actions/session_action';
+import FriendshipsIndex from '../friendships/friends_index'
+import FriendButton from '../friendships/friendship_status';
+ import FriendshipContainer from '../friendships/friendships_container';
 
 class ProfileForm extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = this.props.profile
-  }
+    super(props);    
+    console.log(this.props.match)
+   }
 
   componentDidMount(){
-      this.props.receiveCurrentUser(this.props.match.params.userId)
-  }
+       this.props.fetchUsers();
+      this.props.fetchUser(this.props.match.params.userId)
+    }
 
-  renderFriendButton(){
-    const {follow, unfollow, currentUserId } = this.props;
-    let friendButton;
-    if (currentUserId === this.state.id || !currentUserId) {
-        friendButton = null
-    } else if (user.following) {
-        <a onClick={() => unfollow(user.followId)} className="follow-button">UnFriend</a>
-    } else {
-        <a onClick={() => follow({ requested_id: user.id, user_id: currentUserId })} className="follow-button">Friend</a>     
-    }
-    return(
-        <div>{friendButton} </div>
-    )
-    }
   renderAbout(){
+      if(!this.props.match.params.userId){return null}
     return(
         <div>
             <h2>Intro</h2>
-            <p>Bithday {this.state.birthday}</p>
+            <p>Bithday {this.props.profile.birthday} </p>
             <p>From</p>
-            <Link to={`/users/${this.state.id}/edit`}>
-                <button className='profile-edit-button' type='submit'>Update Profile</button>
+            <Link to={`/users/${this.props.profile.id}/edit`}>
+            <button className='profile-edit-button' type='submit'>Update Profile</button>
             </Link>
         </div>
     )
 }
   render (){
+    if(!this.props.profile){return null} 
+    // const friendButton = () =>(   
+    //     this.props.users.map((friend,idx) =>(
+    //         <FriendshipContainer
+    //         friend={friend}
+    //         key={idx}
+    //         deleteFriend={this.props.deleteFriend}
+    //         createFriend={this.props.createFriend}
+    //         /> ) )
+    //  ) 
       return (
           <div className='profile-page'>
               <header className='profile-header-container'>
                   <div className='cover-img'>cover img</div>
                   <div className='profile-img'>profile icon</div>
-                  <h1 className='username'>My name is {this.state.username}</h1>
-                  {this.renderFriendButton()}
-                  {/* {console.log(this.state.username)} */}
-                  <div className='profile-links-container'>
-                      {/* link/button to render each page */}
+                  <h1 className='username'>My name is {this.props.profile.username}</h1>
+                  {(this.props.profile.id === this.props.currentUser.id) ? (null) : <FriendshipContainer/> }
+                 {/* friendButton() */}
+              
+                      <div className='profile-links-container'>
                       <p>posts</p> 
                       <p>about</p>
-                      <p>friends</p>
+                      <Link to={'/following'}>
+                        <button className='profile-links-buttons' >friends</button>
+                      </Link>
                   </div>
               </header>
               <div className='profile-body'>

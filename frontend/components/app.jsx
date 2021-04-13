@@ -33,9 +33,8 @@ const App = () => (
       <Route exact path="/users/:userId/edit" component={ProfileEditContainer} />
       <Route exact path="/users/:userId/show" component={ProfileShowContainer} />
       <Route exact path="/posts/:postId/edit" component={PostEditFormContainer} />
-      <Route exact path="/posts/new" component={PostFormContainer} />
-      
-      <Route exact path="/users/following" component={FriendshipContainer} />
+      <Route exact path="/posts/new" component={PostFormContainer} />      
+      <Route exact path="/following" component={FriendshipContainer} />
       <Route component={NoMatchPage} />
     </Switch>
   </div>
