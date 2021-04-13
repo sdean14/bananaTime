@@ -46,7 +46,7 @@ class ProfileForm extends React.Component {
                   <div className='cover-img'>cover img</div>
                   <div className='profile-img'>profile icon</div>
                   <h1 className='username'>My name is {this.props.profile.username}</h1>
-                  {(this.props.profile.id === this.props.currentUser.id) ? (null) : <FriendshipContainer/> }
+                  {(this.props.currentUser && this.props.profile.id === this.props.currentUser.id) ? (null) : <FriendshipContainer/> }
                  {/* friendButton() */}
               
                       <div className='profile-links-container'>
