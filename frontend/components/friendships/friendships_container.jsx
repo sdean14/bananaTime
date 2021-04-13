@@ -5,7 +5,7 @@ import { createFriend, deleteFriend } from '../../actions/friendship_actions';
 import FriendshipsIndex from './friends_index';
 
 const mapStateToProps = ({entities, session}) => {
-  
+  console.log(session)
   let usersArr = Object.values(entities.users);
   let currentUser = session.currentUser;
   return {

@@ -5,15 +5,17 @@ import { Link } from 'react-router-dom';
 class FriendButton extends React.Component {
     constructor(props) {
       super(props);
+
+      this.handlefriend = this.handlefriend.bind(this)
       let temp = this.props.friend.followed_by_current_user
-     
+    
       if(!!temp){
         this.state = {
-          friend: true
+          followed: true
         } 
       } else {
         this.state = {
-          friend: false
+          followed: false
         }
       }
     }
@@ -23,14 +25,14 @@ class FriendButton extends React.Component {
         this.props.refetch();
         this.props.deleteFriend(this.props.friend.id).then(() => {
           this.setState({
-              friend: false
+              followed: false
           });
         });
       } else {
         this.props.refetch();
         this.props.createFriend(this.props.friend.id).then(() => {
             this.setState({
-                friend: true
+                followed: true
             });
         });
       }

@@ -23,23 +23,27 @@ class FriendshipsIndex extends React.Component {
     }
 
     render(){
-      if (this.props.users.length === 0) {
+      if (!this.props.users || this.props.users.length <= 1) {
         return null
     };
       let friendsYouFollow = [];
-      console.log(this.props)
-      for (let i = 0; i < this.props.users.length; i++) {
-        if(this.props.users[i].followed_by_current_user === true && this.props.users[i].id !== this.props.currentUser.id){
-          friendsYouFollow.push(this.props.users[i])
-        }        
-      };
+      // for (let i = 0; i < this.props.users.length; i++) {
+      //   if(this.props.users[i].followed_by_current_user === true && this.props.users[i].id !== this.props.currentUser.id){
+      //     friendsYouFollow.push(this.props.users[i])
+      //   }        
+      // };
+      this.props.users.map((user) => {
+        if (!user.followed_by_current_user) {
+          friendsYouFollow.push(user);
+        }
+    });
       return(
         <div>
           <div className='list-of-friends-you-follow'>
             <h2 className='friends'>Friends List</h2>
             <ul>
               { friendsYouFollow.map((friend, idx) => {
-                console.log(friend)
+               
                 return(
                   <li key={idx}>
                    
