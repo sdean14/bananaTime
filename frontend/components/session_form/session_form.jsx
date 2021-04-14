@@ -117,7 +117,7 @@ class SessionForm extends React.Component {
         <p> ©Satomi Dean  2021</p>
         <p ></p>
         <img className='githubcat' src="https://cdn2.iconfinder.com/data/icons/social-icons-grey/512/GITHUB-512.png" alt=""/>
-        {/* <a href="https://github.com/sdean14">GitHub</a> */}
+        <a href="https://github.com/sdean14">GitHub</a>
       </footer>
     </div>
     );

@@ -36,7 +36,8 @@ class PostIndex extends React.Component{
           </div>
         </div>
         <div className='left-sidebar-colum'>
-          <h1>{this.props.currentUser.username}</h1>
+          {/* <h1>{this.props.currentUser.username}</h1> */}
+          {/* {console.log(this.props.currentUser.username)} */}
           <div><Link to='/following'>Friends</Link></div>
           <div>GitHub</div>
           <div>Satomi Dean</div>
