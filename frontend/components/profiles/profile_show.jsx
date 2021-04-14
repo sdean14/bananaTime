@@ -4,22 +4,26 @@ import { logoutCurrentUser } from '../../actions/session_action';
 import FriendshipsIndex from '../friendships/friends_index'
 import FriendButton from '../friendships/friendship_status';
 import FriendshipContainer from '../friendships/friendships_container';
+import FriendshipButtonContainer from '../friendships/friendships_button_container';
+import PostFormContainer from '../posts/post_create_form_container'
+import PostItemContainer from '../posts/post_item_container';
 
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);    
-    // console.log(this.props.match)
-   }
-
+  }
+  
   componentDidMount(){
-       this.props.fetchUsers();
-      this.props.fetchUser(this.props.match.params.userId)
-    }
-
+    this.props.fetchUsers();
+    this.props.fetchUser(this.props.match.params.userId);
+    this.props.fetchPosts();
+    
+  }
+  
   renderAbout(){
-      if(!this.props.match.params.userId){return null}
+    if(!this.props.match.params.userId){return null}
     return(
-        <div>
+      <div>
             <h2>Intro</h2>
             <p>Bithday {this.props.profile.birthday} </p>
             <p>From</p>
@@ -28,7 +32,31 @@ class ProfileForm extends React.Component {
             </Link>
         </div>
     )
-}
+  }
+  
+  renderOwnPosts() {
+    let myPosts = [];
+    for (let i = 0; i < this.props.posts.length; i++) {
+      if(this.props.posts[i].author_id === this.props.profile.id){
+        myPosts.push(this.props.posts[i])
+      }      
+    }
+    return (
+      <div>{myPosts.map((post, idx) =>(
+        <ul key={idx} className='each-posts'>  
+          <h2 className='author-name'>{this.props.profile.username}</h2>  
+          <h2>{post.body}</h2>
+          <div className='button-edit-post'>
+          <Link  to={`/posts/${post.id}/edit`}>Edit</Link>
+          <button onClick={() => this.props.deletePost(post.id)}>Delete</button>
+          </div>
+        </ul>
+      ))}
+      </div>
+    )
+
+  }
+
   render (){
     if(!this.props.profile){return null} 
     // const friendButton = () =>(   
@@ -40,6 +68,7 @@ class ProfileForm extends React.Component {
     //         createFriend={this.props.createFriend}
     //         /> ) )
     //  ) 
+  
       return (
           <div className='profile-page'>
               <header className='profile-header-container'>
@@ -48,7 +77,7 @@ class ProfileForm extends React.Component {
                   <h1 className='username'>My name is {this.props.profile.username}</h1>
                   {(this.props.currentUser && this.props.profile.id === this.props.currentUser.id) ? (null) : <button>friend?</button> }
                  {/* friendButton() */}
-              
+                              
                       <div className='profile-links-container'>
                       <p>posts</p> 
                       <p>about</p>
@@ -60,11 +89,12 @@ class ProfileForm extends React.Component {
               <div className='profile-body'>
                   <div className='left-body'>
                       <div>{this.renderAbout()}</div>
-                      <div>friends</div>
+                      <div><FriendshipContainer /></div>
+                        
                   </div>
                   <div className='right-body'>
-                      <div>create post</div>
-                      <div>own post feed</div>
+                      <div><PostFormContainer /></div>
+                      <div>{this.renderOwnPosts()}</div>
                   </div>
               </div>
 

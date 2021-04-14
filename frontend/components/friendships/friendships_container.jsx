@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
   let usersArr = Object.values(state.entities.users);
   let currentUser = state.entities.users[state.session.id];
   // console.log(state.entities.users[state.session.id])
+  
   return ({
      users: usersArr,
     currentUser: currentUser

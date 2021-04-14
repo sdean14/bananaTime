@@ -10,6 +10,8 @@ import PostItemContainer from './posts/post_item_container';
 import PostEditFormContainer from './posts/post_edit_form_container';
 import PostFormContainer from './posts/post_create_form_container'
 import FriendshipContainer from './friendships/friendships_container';
+// import FriendshipButtonContainer from './friendships/friendships_button_container';
+
 const NoMatchPage = () => {
   return (
     <div className='no-match-container'>
@@ -35,6 +37,7 @@ const App = () => (
       <Route exact path="/posts/:postId/edit" component={PostEditFormContainer} />
       <Route exact path="/posts/new" component={PostFormContainer} />      
       <Route exact path="/following" component={FriendshipContainer} />
+      {/* <Route exact path="/toggle" component={FriendshipButtonContainer} /> */}
       <Route component={NoMatchPage} />
     </Switch>
   </div>

@@ -17,7 +17,7 @@ class FriendButton extends React.Component {
           followed: false
         }
       }
-      console.log('yoooooohooooo')
+      // console.log('yoooooohooooo')
     }
 
     handlefriend(e){
