@@ -1,8 +1,8 @@
 import React from "react";
-import { connect } from "react-redux";
+import { Route, Link } from 'react-router-dom';
 import PostIndexItem from './post_index_item'
 import PostCreateFormContainer from './post_create_form_container'
-
+import FriendshipContainer from '../friendships/friendships_container'
 class PostIndex extends React.Component{
   constructor(props){
     super(props)
@@ -35,6 +35,13 @@ class PostIndex extends React.Component{
             </ul>
           </div>
         </div>
+        <div className='left-sidebar-colum'>
+          <h1>{this.props.currentUser.username}</h1>
+          <div><Link to='/following'>Friends</Link></div>
+          <div>GitHub</div>
+          <div>Satomi Dean</div>
+        </div>
+
         </div>
       </div>
     )

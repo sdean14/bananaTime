@@ -30,17 +30,15 @@ class PostForm extends React.Component {
       <div className='new-post-form'>
         <h3>{this.props.formType}</h3>
         <form onSubmit={this.handleSubmit}>
-          <h3>{this.props.username}</h3>
-          <label>
+          {/* <h3>{this.props.users.username}</h3> */}
             <input
               type='text'
               value={this.state.body}
               onChange={this.update('body')}
               placeholder={'What\'s on your mind?'}
             />
-          </label>
-
-          <button className='button-post' type='submit' value={this.props.formType} >{this.props.formType}</button>
+          <br/>
+          <button className='button-post' type='submit' value={this.props.formType} >Post</button>
 
         </form>
       </div>

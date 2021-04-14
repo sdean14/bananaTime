@@ -4,13 +4,16 @@
 
 //new post form
 .wall {
-  background: rgb(250, 213, 219);
+  // background: rgb(250, 213, 219);
+  background-color: var(--web-wash);
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row-reverse;
   padding: 50px;
   font-family: 'Roboto', sans-serif;
+  // align-items: flex-start;
 }
+
 .mid-column {
   border-radius: 10px;
   background: lightyellow;
@@ -20,48 +23,85 @@
   margin-right: auto;
   padding: 10px;
 }
+
+.left-sidebar-colum {
+  background: gold
+  }
 .new-post-form {
-  background: lightgreen;
+  // background: lightgreen;
+  background: #fff;
   margin: 10px;
   border-radius: 10px;
+  border: solid 2px lightgrey;
   padding: 15px;
-}
- 
-.button-post {
-  // padding: 5px;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   
-  // text-align: center;
-  // display:table-cell;
-  // vertical-align: middle;
+  }
+  h3 {
+    margin-top: 0px;
+    width: 500px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    border-bottom: lightgrey solid 1px;
+  }
+   input {
+     margin: 5px;
+     width: 90%;
+     font-size: 20px;
+   }
+   
+   .button-post {
+     background: rgba(174, 192, 224, 0.719);
+     color:gray;
+     margin-top: 5px;
+     border-radius: 10px;
+     border: none;
+     padding: 8px;
+     font-weight: bold;
+     font-size: 15px;
+     width: 80%;
+     text-align: center;
+    }
 }
 .button-edit-post {
-  padding: 15px;
-  color: #fff;
+  width: auto;
+  color:gray;
+  margin-top: 5px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 15px;
   display: flex;
   justify-content: flex-end;
-  // padding-right: 10px;
+  padding-right: 10px;
   
   // text-align: center;
   // display:table-cell;
   // vertical-align:middle;
   // flex-direction: row;
-  a {
+  a, button {
+    border-radius: 10px;
+    padding: 8px;
+    background: rgba(174, 192, 224, 0.719);
+    border: solid 1px lightgrey;
     margin-right: 10px;
   }
 }
+
 .each-posts {
-  margin-top: 5px;
-  background-color: lightsteelblue;
-  border-radius: 10px;
-  padding: 15px;
+  background: #fff;
   margin: 10px;
+  border-radius: 10px;
+  border: solid 2px lightgrey;
+  padding: 15px;
+  color: rgba(0, 0, 0, 0.8);
+
 }
 
 .author-name {

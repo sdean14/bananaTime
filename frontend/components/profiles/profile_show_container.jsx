@@ -11,6 +11,7 @@ const mapStateToProps = ( state, ownProps ) => {
   // console.log(state)
   let currentUser = state.entities.users[state.session.id]
   let arrUsers = Object.values(state.entities.users)
+  // let wallId = state.users[ownProps.match.params.userId]]
   return {
     profile: state.entities.users[ownProps.match.params.userId],
     currentUser: currentUser,
