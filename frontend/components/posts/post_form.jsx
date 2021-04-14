@@ -16,6 +16,7 @@ class PostForm extends React.Component {
     if (this.props.formType === 'Update Post') {
       this.setState({ redirect: '/' })
     }
+    this.setState({'body': ''})
   }
 
   update(field) {

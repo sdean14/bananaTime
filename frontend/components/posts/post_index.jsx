@@ -34,13 +34,14 @@ class PostIndex extends React.Component{
             <PostCreateFormContainer/>
             <div className='post'>
               <ul>
-                { this.props.posts.map(post => (
+                { this.props.posts.map((post, idx) => (
                   <PostIndexItem
                   users={this.props.users}
+                  currentUser={this.props.currentUser}
                   author={this.props.users[post.author_id]}
                   post={post}
                   deletePost={this.props.deletePost}
-                  key={post.id} />
+                  key={idx} />
                   ))}
               
               </ul>
@@ -53,19 +54,19 @@ class PostIndex extends React.Component{
               <div><Link to={`/users/${this.props.currentUser.id}/show`}>{this.props.currentUser.username}</Link></div>
             </div>
             <div className='list'>
-              <div><i className='icon-img' class="fas fa-user-friends"></i></div>
+              <div><i className='icon-img' className="fas fa-user-friends"></i></div>
               <div><Link to='/following'>Friends</Link></div>
             </div>
             <div className='list'>
-              <div><i className='icon-img' class="fab fa-github"></i></div>
+              <div><i className='icon-img' className="fab fa-github"></i></div>
               <div><a href="https://github.com/sdean14">GitHub</a></div>
             </div>
             <div className='list'>
-              <div><i className='icon-img' class="fas fa-code-branch"></i></div>
+              <div><i className='icon-img' className="fas fa-code-branch"></i></div>
               <div><a href="https://github.com/sdean14/bananaTime">Tomobook</a></div>
             </div>
             <div className='list'>
-              <div><i className='icon-img' class="fas fa-portrait"></i></div>
+              <div><i className='icon-img' className="fas fa-portrait"></i></div>
               <div>Satomi Dean</div>
             </div>
           </div>
