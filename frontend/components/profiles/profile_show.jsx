@@ -3,12 +3,12 @@ import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import { logoutCurrentUser } from '../../actions/session_action';
 import FriendshipsIndex from '../friendships/friends_index'
 import FriendButton from '../friendships/friendship_status';
- import FriendshipContainer from '../friendships/friendships_container';
+import FriendshipContainer from '../friendships/friendships_container';
 
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);    
-    console.log(this.props.match)
+    // console.log(this.props.match)
    }
 
   componentDidMount(){
@@ -44,9 +44,9 @@ class ProfileForm extends React.Component {
           <div className='profile-page'>
               <header className='profile-header-container'>
                   <div className='cover-img'>cover img</div>
-                  <div className='profile-img'>profile icon</div>
+                  <div className='profile-img'>profile icon</div>   
                   <h1 className='username'>My name is {this.props.profile.username}</h1>
-                  {(this.props.currentUser && this.props.profile.id === this.props.currentUser.id) ? (null) : <FriendshipContainer/> }
+                  {(this.props.currentUser && this.props.profile.id === this.props.currentUser.id) ? (null) : <button>friend?</button> }
                  {/* friendButton() */}
               
                       <div className='profile-links-container'>

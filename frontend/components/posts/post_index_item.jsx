@@ -2,12 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const PostIndexItem = props => (
+const PostIndexItem = ({ author, post, deletePost}) => (
   <li className='each-posts'>
-    {/* <Link to={`{/users/${props.post.author_id}/show}`}>{}</Link> */}
-    <h2>{props.post.body}</h2>
-    <Link to={`/posts/${props.post.id}/edit`}>Edit</Link>
-    <button onClick={() => props.deletePost(props.post.id)}>Delete</button>
+    {/* {console.log(author ? author.id : null)} */}
+    
+    <Link className='author-name' to={`/users/${post.author_id}/show`}>{author ? author.username : null}</Link>
+    <h2>{post.body}</h2>
+    <div className='button-edit-post'>
+      <Link  to={`/posts/${post.id}/edit`}>Edit</Link>
+      <button onClick={() => deletePost(post.id)}>Delete</button>
+    </div>
+
   </li>
 );
 

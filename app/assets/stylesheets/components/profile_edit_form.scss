@@ -12,8 +12,16 @@
 }
 
 .profile-edit-button {
-  background: #1877f2;
+  background: #1877f2;    
+  padding: 15px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  text-align: center;
+  display:table-cell;
+  vertical-align:middle;
 
   // margin-left: 50px;
-  
 }

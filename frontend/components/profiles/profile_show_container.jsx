@@ -7,7 +7,7 @@ import ProfileForm from './profile_show';
 // import { Link } from 'react-router-dom';
 
 const mapStateToProps = ( state, ownProps ) => {
-  
+  // console.log(state)
   let currentUser = state.entities.users[state.session.id]
   let arrUsers = Object.values(state.entities.users)
   return {

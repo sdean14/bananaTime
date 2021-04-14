@@ -6,14 +6,15 @@ import PostCreateFormContainer from './post_create_form_container'
 class PostIndex extends React.Component{
   constructor(props){
     super(props)
-
+    
   }
   componentDidMount() {
     this.props.fetchPosts();
+    this.props.fetchUsers();
   }
-
+  
   render(){
-
+ 
     return(
       <div>
         <div className='wall'>
@@ -24,6 +25,8 @@ class PostIndex extends React.Component{
             <ul>
               { this.props.posts.map(post => (
                 <PostIndexItem
+                users={this.props.users}
+                author={this.props.users[post.author_id]}
                 post={post}
                 deletePost={this.props.deletePost}
                 key={post.id} />

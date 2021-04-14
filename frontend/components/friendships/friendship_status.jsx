@@ -8,7 +8,6 @@ class FriendButton extends React.Component {
 
       this.handlefriend = this.handlefriend.bind(this)
       let temp = this.props.friend.followed_by_current_user
-    
       if(!!temp){
         this.state = {
           followed: true
@@ -18,7 +17,9 @@ class FriendButton extends React.Component {
           followed: false
         }
       }
+      console.log('yoooooohooooo')
     }
+
     handlefriend(e){
       e.preventDefault()
       if (this.props.friend.followed_by_current_user){

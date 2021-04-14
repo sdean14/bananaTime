@@ -20,6 +20,12 @@ User.create(
     password: "123456",
     birthday: "11/11/1111"
 )
+User.create(
+    username: "bunny stuff",
+    email: "bunny@tomobook.com",
+    password: "123456",
+    birthday: "11/11/1111"
+)
 
 Post.create!(:body => "Body 1", author_id: 1)
 Post.create!(:body => "Body 2", author_id: 7)
