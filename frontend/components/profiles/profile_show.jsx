@@ -26,10 +26,12 @@ class ProfileForm extends React.Component {
             <p className='intro'>Intro</p>
             <p>Bithday: {this.props.profile.birthday} </p>
             <p>From: New Zealand</p>
+
+            {(this.props.currentUser.id === this.props.profile.id) ? (
             <Link to={`/users/${this.props.profile.id}/edit`}>
             <button className='profile-edit-button' type='submit'>Update Profile</button>
-            </Link>
-        </div>
+            </Link>) : null}
+      </div>
     )
   }
   

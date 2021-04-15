@@ -29,7 +29,8 @@ class Greeting extends React.Component{
         <div>
             <a href="https://github.com/sdean14"><i className='icon-img' className="fab fa-github"></i></a>
         </div>
-     
+
+        <Link to={`/users/${this.props.currentUser.id}/show`}><h2>{this.props.currentUser.username}</h2></Link>
 
         <button className="header-logout-button" onClick={this.props.logout}>Log Out</button>
       </hgroup>
