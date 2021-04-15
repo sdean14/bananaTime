@@ -27,5 +27,7 @@ User.create(
     birthday: "11/11/1111"
 )
 
+Post.delete_all
 Post.create!(:body => "Body 1", author_id: 1)
 Post.create!(:body => "Body 2", author_id: 7)
+

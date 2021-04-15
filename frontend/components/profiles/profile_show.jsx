@@ -1,12 +1,11 @@
 import React from 'react';
 import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import { logoutCurrentUser } from '../../actions/session_action';
-import FriendshipsIndex from '../friendships/friends_index'
-import FriendButton from '../friendships/friendship_status';
+import FriendshipsIndex from '../friendships/friendships_index'
 import FriendshipContainer from '../friendships/friendships_container';
-import FriendshipButtonContainer from '../friendships/friendships_button_container';
 import PostFormContainer from '../posts/post_create_form_container'
 import PostItemContainer from '../posts/post_item_container';
+import FriendButtonContainer from '../friendships/friend_button_container';
 
 class ProfileForm extends React.Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class ProfileForm extends React.Component {
     if(!this.props.match.params.userId){return null}
     return(
       <div>
-            <h2>Intro</h2>
+            <p className='intro'>Intro</p>
             <p>Bithday {this.props.profile.birthday} </p>
             <p>From</p>
             <Link to={`/users/${this.props.profile.id}/edit`}>
@@ -64,48 +63,44 @@ class ProfileForm extends React.Component {
 
   render (){
     if(!this.props.profile){return null} 
-    // const friendButton = () =>(   
-    //     this.props.users.map((friend,idx) =>(
-    //         <FriendshipContainer
-    //         friend={friend}
-    //         key={idx}
-    //         deleteFriend={this.props.deleteFriend}
-    //         createFriend={this.props.createFriend}
-    //         /> ) )
-    //  ) 
+
   
-      return (
-          <div className='profile-page'>
-              <header className='profile-header-container'>
-                  <div className='cover-img'>cover img</div>
-                  <div className='profile-img'>profile icon</div>   
-                  <h1 className='username'>My name is {this.props.profile.username}</h1>
-                  {(this.props.currentUser && this.props.profile.id === this.props.currentUser.id) ? (null) : <button>friend?</button> }
-                 {/* friendButton() */}
-                              
-                      <div className='profile-links-container'>
-                      <p>posts</p> 
-                      <p>about</p>
-                      <Link to={'/following'}>
-                        <button className='profile-links-buttons' >friends</button>
-                      </Link>
-                  </div>
-              </header>
-              <div className='profile-body'>
-                  <div className='left-body'>
-                      <div>{this.renderAbout()}</div>
-                      <div><FriendshipContainer /></div>
-                        
-                  </div>
-                  <div className='right-body'>
-                      <div><PostFormContainer /></div>
-                      <div>{this.renderOwnPosts()}</div>
-                  </div>
+    return (
+      <div className='profile-page'>
+          <header className='profile-header-container'>
+              <div className='cover-img'>cover img</div>
+              <div className='profile-img'>profile icon</div>   
+              <h1 className='username'>My name is {this.props.profile.username}</h1>
+              <div><FriendButtonContainer 
+                profile={this.props.profile}
+              /></div>
+            
+          
+            
+   
+              <div className='profile-links-container'>
+                <p>posts</p> 
+                <p>about</p>
+                <p><Link to={'/following'}>
+                  <button className='profile-links-buttons' >friends</button>
+                </Link></p>
+              </div>
+          </header>
+
+          <div className='profile-body'>
+
+              <div className='left-body'>
+                  <div className='render-about'>{this.renderAbout()}</div>
+                  <div><FriendshipContainer /></div>
               </div>
 
-
+              <div className='right-body'>
+                  <div><PostFormContainer /></div>
+                  <div>{this.renderOwnPosts()}</div>
+              </div>
           </div>
-      )
+      </div>
+    )
   }
 }
 

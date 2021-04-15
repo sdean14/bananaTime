@@ -51,7 +51,7 @@ class PostIndex extends React.Component{
           <div className='left-sidebar-colum'>
             <div className='list'>
 
-              <div><Link to={`/users/${this.props.currentUser.id}/show`}>{this.props.currentUser.username}</Link></div>
+              <div><Link to={`/users/${this.props.currentUser.id}/show`}>{this.props.currentUser.username}'s Profile</Link></div>
             </div>
             <div className='list'>
               <div><i className='icon-img' className="fas fa-user-friends"></i></div>

@@ -17,6 +17,9 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # @follows = @user.friends_you_follow
+    # @followers = @user.fanships
+    render 'api/users/show'
   end
   
   def update

@@ -7,7 +7,7 @@ const PostIndexItem = ({ author, post, deletePost, currentUser}) => (
     {/* {console.log(author ? author.id : null)} */}
     
     <Link className='author-name' to={`/users/${post.author_id}/show`}>{author ? author.username : null}</Link>
-    <h2>{post.body}</h2>
+    <h2 className='body'>{post.body}</h2>
     {currentUser === author ? (
       <div className='button-edit-post'>
       <Link  to={`/posts/${post.id}/edit`}>Edit</Link>

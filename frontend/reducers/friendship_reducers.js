@@ -6,11 +6,11 @@ const friendshipsReducer = (oldState={}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case FRIEND:
-      return merge({}, state, {
+      return merge({}, oldState, {
         [action.follow.id]: action.follow
     });
     case UNFRIEND:
-      let newState = merge({}, state);
+      let newState = merge({}, oldState);
       delete newState[action.follow.id];
       return newState;;  
     default:

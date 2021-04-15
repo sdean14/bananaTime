@@ -4,14 +4,13 @@ import ProfileForm from './profile_show';
 import { receiveCurrentUser } from '../../actions/session_action';
 import { fetchUser, fetchUsers } from '../../actions/user_actions';
 import { createFriend, deleteFriend } from '../../actions/friendship_actions';
-import {fetchPosts, deletePost} from '../../actions/post_actions'
+import {fetchPosts, deletePost} from '../../actions/post_actions';
 // import { Link } from 'react-router-dom';
 
 const mapStateToProps = ( state, ownProps ) => {
   // console.log(state)
   let currentUser = state.entities.users[state.session.id]
   let arrUsers = Object.values(state.entities.users)
-  // let wallId = state.users[ownProps.match.params.userId]]
   return {
     profile: state.entities.users[ownProps.match.params.userId],
     currentUser: currentUser,

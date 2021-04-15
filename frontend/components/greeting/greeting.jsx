@@ -21,8 +21,16 @@ class Greeting extends React.Component{
          <Link to="/" className="header-link">
           <h1 className='header-logo'>Tomobook</h1>
         </Link>
-        <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
-        <Link to={`/users/${this.props.currentUser.id}/show`}>user profile</Link>
+        
+        <div>
+          <a href="https://github.com/sdean14/bananaTime"><i className='icon-img' className="fas fa-code-branch"></i></a>
+        </div>
+
+        <div>
+            <a href="https://github.com/sdean14"><i className='icon-img' className="fab fa-github"></i></a>
+        </div>
+     
+
         <button className="header-logout-button" onClick={this.props.logout}>Log Out</button>
       </hgroup>
     );

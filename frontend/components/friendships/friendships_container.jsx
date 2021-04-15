@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import{ fetchUser, fetchUsers } from '../../actions/user_actions'
 import { createFriend, deleteFriend } from '../../actions/friendship_actions';
-import FriendshipsIndex from './friends_index';
+import FriendshipsIndex from './friendships_index';
 
 const mapStateToProps = (state) => {
   let usersArr = Object.values(state.entities.users);
