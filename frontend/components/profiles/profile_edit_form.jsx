@@ -13,25 +13,27 @@ class ProfileEditForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.updateProfile(this.state);
+        // this.setState({ redirect: `/users/${this.state.id}/show`})
     }
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
     render() {
-        console.log(this.state.username)
+        console.log(this.props)
         return (
             <div> 
                 <form className='profile-edit-form' onSubmit={this.handleSubmit}>
-                    <p>this is profile edit page</p> 
-                    <label>Name:
-                    <input
+                    <p>Profile</p> 
+                    <label className='edit-p'>Name:
+                    <input className='edit-p'
                         type='text'
                         value={this.state.username}
                         onChange={this.update('username')} />
                     </label>
-                    <label>Birthday:
+                    <label className='edit-p'>Birthday:
                     <input
+                        className='edit-p'
                         type='date'
                         value={this.state.birthday}
                         onChange={this.update('birthday')} />

@@ -22,10 +22,10 @@ class ProfileForm extends React.Component {
   renderAbout(){
     if(!this.props.match.params.userId){return null}
     return(
-      <div>
+      <div  className='render-about'>
             <p className='intro'>Intro</p>
-            <p>Bithday {this.props.profile.birthday} </p>
-            <p>From</p>
+            <p>Bithday: {this.props.profile.birthday} </p>
+            <p>From: New Zealand</p>
             <Link to={`/users/${this.props.profile.id}/edit`}>
             <button className='profile-edit-button' type='submit'>Update Profile</button>
             </Link>
@@ -70,15 +70,15 @@ class ProfileForm extends React.Component {
           <header className='profile-header-container'>
               <div className='cover-img'>cover img</div>
               <div className='profile-img'>profile icon</div>   
-              <h1 className='username'>My name is {this.props.profile.username}</h1>
-              <div><FriendButtonContainer 
-                profile={this.props.profile}
-              /></div>
+              <h1 className='username'>{this.props.profile.username}</h1>
             
           
             
    
               <div className='profile-links-container'>
+                <div className='fb-container'><FriendButtonContainer 
+                  profile={this.props.profile}
+                /></div>
                 <p>posts</p> 
                 <p>about</p>
                 <p><Link to={'/following'}>
@@ -90,7 +90,7 @@ class ProfileForm extends React.Component {
           <div className='profile-body'>
 
               <div className='left-body'>
-                  <div className='render-about'>{this.renderAbout()}</div>
+                  <div>{this.renderAbout()}</div>
                   <div><FriendshipContainer /></div>
               </div>
 

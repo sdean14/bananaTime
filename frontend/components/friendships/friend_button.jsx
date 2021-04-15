@@ -43,7 +43,7 @@ class FriendButton extends React.Component {
           this.setState({ followed: true });
         });
       }
-      
+      window.location.reload()
     }
     
     render(){

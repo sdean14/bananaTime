@@ -1,27 +1,41 @@
 .profile-edit-form {
-  background: lavenderblush;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: flex-start;
-  width: 600px;
-  padding: 40px;
-  font-family: 'Roboto', sans-serif;
+  margin-bottom: 10px;
+  background: #fff;
+  width: 360px;
+  min-height: 100px;
+  margin: 10px;
   border-radius: 10px;
-}
+  padding: 16px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
-.profile-edit-button {
-  background: #1877f2;    
-  padding: 15px;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 5px;
-  text-align: center;
-  display:table-cell;
-  vertical-align:middle;
-
-  // margin-left: 50px;
+  p{
+    font-size: 20px;
+    color: rgb(32, 32, 32);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .edit-p {
+    font-size: 20px;
+    color: rgb(65, 65, 65);
+  }
+ 
+  
+  .profile-edit-button {
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    width: 100%; 
+    background: rgb(147, 163, 180);
+    font-size: 18px;
+    padding: 5px;
+    
+  }
+  .profile-edit-button:hover {
+    background: rgb(179, 193, 209);
+  }
 }

@@ -69,7 +69,7 @@ class FriendshipsIndex extends React.Component {
                 return(
                   <li className='per-friend' key={idx}>
                    
-                   <Link to={`/users/${friend.id}/show`}>{friend.username}</Link>
+                   <Link to={`/users/${friend.id}/show`} className='per-friendname'>{friend.username}</Link>
          
                   <FriendIndexItem
                    refetch={this.refetch.bind(this)}

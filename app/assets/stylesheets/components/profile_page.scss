@@ -48,10 +48,34 @@
 .profile-links-container p {
   padding-right: 10px;
   margin: 5px;
+  margin-top: 10px;
   font-size: 25px;
   color: gray;
   text-align: center;
 }
+.fb-container{
+  order: 3;
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  
+
+  .friend-button{
+  background: #1877f2;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  align-items: flex-end;
+}
+.friend-button:hover {
+  background: #2784ff;
+
+}
+}
+
 
 //body
 .profile-body {
@@ -75,6 +99,7 @@
   
   .render-about{
     display: flex;
+    flex-direction: column;
     margin-bottom: 10px;
     background: #fff;
     width: 360px;
@@ -91,9 +116,17 @@
     }
     .intro {
       font-size: 20px;
-      color: gray;
+      color: rgb(32, 32, 32);
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 15px;
     }
+    
     button {
+     font-weight: bold;
+     border-radius: 5px;
+     text-align: center;
+     color: #fff;
      width: 100%; 
      background: rgb(147, 163, 180);
      font-size: 18px;
@@ -115,4 +148,5 @@
   min-height: 400px;
   margin: 10px;
   border-radius: 10px;
+  padding-top: 45px;
 }
