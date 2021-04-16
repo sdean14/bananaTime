@@ -124,12 +124,7 @@ class ProfileForm extends React.Component {
 
           <div className='left-body'>
             <div>{this.renderAbout()}</div>
-            <div className='list-of-friends-you-follow'>
-              {/* <FriendshipContainer
-                profile={this.props.profile}
-
-              /> */}
-                 
+            <div className='list-of-friends-you-follow'>            
                   <div className="friends-list-containerz">
                 <ul className='friends'>Friends
                   {this.renderFriendList()}
