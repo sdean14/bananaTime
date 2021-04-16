@@ -9,18 +9,21 @@ User.delete_all
 
 
  User.create(
+     id:1,
     username: "Demo",
     email: "demouser@tomobook.com",
     password: "123456",
     birthday: "11/11/1111"
 )
 User.create(
+    id: 2,
     username: "watson dean",
     email: "watson@tomobook.com",
     password: "123456",
     birthday: "11/11/1111"
 )
 User.create(
+    id: 3
     username: "bunny stuff",
     email: "bunny@tomobook.com",
     password: "123456",
@@ -28,6 +31,6 @@ User.create(
 )
 
 Post.delete_all
-Post.create!(:body => "Body 1", author_id: 1)
-Post.create!(:body => "Body 2", author_id: 2)
+Post.create!(id: 1, :body => "Body 1", author_id: 1)
+Post.create!(id: 2, :body => "Body 2", author_id: 2)
 
