@@ -23,7 +23,7 @@ User.create(
     birthday: "11/11/1111"
 )
 User.create(
-    id: 3
+    id: 3,
     username: "bunny stuff",
     email: "bunny@tomobook.com",
     password: "123456",
