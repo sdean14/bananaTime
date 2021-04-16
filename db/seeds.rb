@@ -29,5 +29,5 @@ User.create(
 
 Post.delete_all
 Post.create!(:body => "Body 1", author_id: 1)
-Post.create!(:body => "Body 2", author_id: 7)
+Post.create!(:body => "Body 2", author_id: 2)
 
