@@ -8,8 +8,7 @@ import FriendButton from './friend_button';
 const mapStateToProps = (state, ownProps) => {
   let usersArr = Object.values(state.entities.users);
   let currentUser = state.entities.users[state.session.id];
-  // console.log(state.entities.users[state.session.id])
-  // console.log(ownProps.profile)
+
   return ({
      users: usersArr,
     currentUser: currentUser,

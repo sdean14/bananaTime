@@ -12,10 +12,20 @@ export const fetchUser = userId => (
   })
 );
 
-export const updateProfile = user => (
+export const updateProfile = (formData, id) => (
   $.ajax({
     method: 'patch',
-    url: `/api/users/${user.id}`,
-    data: { user }
+    url: `/api/users/${id}`,
+    data: formData,
+    contentType: false,
+    processData: false
   })  
 );  
+
+// $.ajax({
+//   url: '/api/users',
+//   method: 'POST',
+//   data: formData,
+//   contentType: false,
+//   processData: false
+// })

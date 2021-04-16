@@ -13,12 +13,20 @@
 }
 
 .cover-img {
-  background: rgb(120, 200, 231);
-  // display: flex;
   height: 350px;
   width: 1040px;
   border-radius: 10px;
+  background-image: asset-url('cover8.jpg');
+  // background-repeat: no-repeat;
+  background-size: contain;
+  // display: flex;
+  // position: relative;
+  // background-size:;
+  
+  // background: rgb(120, 200, 231);
 }
+
+
 
 .profile-img {
   background: rgb(224, 240, 167);
@@ -138,8 +146,13 @@
     }
   }
 
-}
+  .per-fname {
+    font-size: 20px;
+    font-weight: normal;
+  }
 
+}
+  
 
 .right-body {
   // background: lightgrey;

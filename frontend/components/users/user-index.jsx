@@ -13,7 +13,6 @@ class UserIndex extends React.Component{
   }
   
   render(){
-    // console.log(this.props.users)
     let otherUsers = [];
     for (let i = 0; i < this.props.users.length; i++) {
       if(this.props.users[i].id !== this.props.currentUser.id){

@@ -7,7 +7,6 @@ import FriendshipsIndex from './friendships_index';
 const mapStateToProps = (state, ownProps) => {
   let usersArr = Object.values(state.entities.users);
   let currentUser = state.entities.users[state.session.id];
-  // console.log(ownProps.profile.followings)
   
   return ({
     users: usersArr,

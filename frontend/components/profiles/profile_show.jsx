@@ -65,7 +65,6 @@ class ProfileForm extends React.Component {
   }
 
   renderFriendList() {
-    console.log(this.props.profile, 'in render fri')
     if (this.props.profile.follows) {
       let friendId = [];
       let arr = this.props.profile.follows;
@@ -87,7 +86,7 @@ class ProfileForm extends React.Component {
       return (
         <div>
           <div>{fin.map((fName, idx) => (
-            <li key={idx}>{fName}</li>
+            <li className='per-friend' key={idx}>  <div className='per-fname'>{fName}</div></li>
           ))}
           </div>
         </div>
@@ -102,8 +101,11 @@ class ProfileForm extends React.Component {
     return (
       <div className='profile-page'>
         <header className='profile-header-container'>
-          <div className='cover-img'>cover img</div>
-          <div className='profile-img'>profile icon</div>
+          <div className='cover-img'>
+            <div className='inner-img'></div>
+          </div>
+        
+          <img className='profile-img' src={this.props.profile.photoUrl} alt={this.props.profile.username}/>
           <h1 className='username'>{this.props.profile.username}</h1>
 
           <div className='profile-links-container'>
@@ -129,7 +131,7 @@ class ProfileForm extends React.Component {
               /> */}
                  
                   <div className="friends-list-containerz">
-                <ul>
+                <ul className='friends'>Friends
                   {this.renderFriendList()}
                 </ul>
               </div>

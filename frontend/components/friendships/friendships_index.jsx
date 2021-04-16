@@ -9,12 +9,7 @@ class FriendshipsIndex extends React.Component {
     this.fetched = false;
 
     this.handlefriend = this.handlefriend.bind(this)
-    // this.isFriend = this.isFriend.bind(this)
-    // console.log(this.props.users)
-    // console.log( (this.props.profile.followers).concat(this.props.profile.followings) )
-    // (this.props.profile.followers).concat(this.props.profile.followings)
-    // arr.concat((this.props.profile.followings),  (this.props.profile.followers))
-    // console.log(this.props.profile)
+
 
   }
 
