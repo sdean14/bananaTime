@@ -51,11 +51,14 @@ class ProfileEditForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
     render() {
-      if(this.state.redirect){
-          return(
-              <Redirect to={this.state.redirect}/>
-          )
-      }
+const director = () =>{
+    if(this.state.redirect){
+
+        return(
+            <Redirect to={this.state.redirect}/>
+        )
+    }
+}
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
             <div> 
@@ -79,11 +82,13 @@ class ProfileEditForm extends React.Component {
                         onChange={this.handleFile.bind(this)}
                     />
           {preview}
+
                     {/* <Link to={`/users/${this.state.id}/show`}> */}
                         <button className='profile-edit-button' type='submit'>Update Profile</button>
                     {/* </Link> */}
 
                 </form>
+                {director()}
             </div>
         )
     }
