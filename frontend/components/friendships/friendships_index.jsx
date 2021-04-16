@@ -34,19 +34,19 @@ class FriendshipsIndex extends React.Component {
   }
 
   //added
-  handlefriend() {
+  handlefriend(friend) {
     // e.preventDefault()
 
-    if (this.props.friend.followed_by_current_user) {
+    if (friend.followed_by_current_user) {
       this.refetch();
-      this.props.deleteFriend(this.props.friend.id).then(() => {
+      this.props.deleteFriend(friend.id).then(() => {
         this.setState({
           followed: false
         });
       });
     } else {
       this.refetch();
-      this.props.createFriend(this.props.friend.id).then(() => {
+      this.props.createFriend(friend.id).then(() => {
         this.setState({
           followed: true
         });
@@ -66,11 +66,10 @@ class FriendshipsIndex extends React.Component {
         }
       }
     }
-    // console.log('-----')
+   
     return (
       <div>
-        {/* {console.log(friendListIds)} */}
-        {/* {console.log(this.props.users)} */}
+     
 
         {friendListIds.map(id => (
           <div key={id}>{this.props.users[id]}</div>
@@ -95,12 +94,12 @@ class FriendshipsIndex extends React.Component {
     });
     return (
       <div>
-        {/* <div className='list-of-friends-you-follow'>
+        <div className='list-of-friends-you-follow'>
           <h2 className='friends'>Friends List</h2>
-          {/* {this.isFriend()} */}
+         
 
           <ul>
-            {/* { friendsYouFollow.map((friend, idx) => {
+            { friendsYouFollow.map((friend, idx) => {
                 return(
                   <li className='per-friend' key={idx}>
                    
@@ -115,10 +114,10 @@ class FriendshipsIndex extends React.Component {
                    handlefriend={this.handlefriend} />  
                  </li> 
                    );
-                })} */}
+                })}
           </ul>
 
-        {/* </div> */} 
+        </div> 
       </div>
     )
   }

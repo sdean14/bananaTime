@@ -40,13 +40,13 @@ class ProfileForm extends React.Component {
 
   renderOwnPosts() {
     let myPosts = [];
-    // let author;
+
     for (let i = 0; i < this.props.posts.length; i++) {
       if (this.props.posts[i].author_id === this.props.profile.id) {
         myPosts.push(this.props.posts[i])
       }
     }
-    // author= this.props.users[post.author_id];
+   
     return (
       <div>{myPosts.map((post, idx) => (
         <ul key={idx} className='each-posts'>
@@ -74,8 +74,7 @@ class ProfileForm extends React.Component {
           friendId.push(arr[i][key])
         }
       }
-      // console.log(friendId)
-      // console.log('------')
+   
       let fin = [];
       for (let j = 0; j < this.props.users.length; j++) {
         for (const key in this.props.users[j]) {
@@ -124,22 +123,17 @@ class ProfileForm extends React.Component {
           <div className='left-body'>
             <div>{this.renderAbout()}</div>
             <div className='list-of-friends-you-follow'>
-              <FriendshipContainer
+              {/* <FriendshipContainer
                 profile={this.props.profile}
 
-              />
-                  oooooo
+              /> */}
+                 
                   <div className="friends-list-containerz">
                 <ul>
                   {this.renderFriendList()}
                 </ul>
               </div>
-              {/* {console.log(this.props.profile, 'in return')} */}
-
-              {/* {this.props.profile.followings.map(id => (
-                      <div key={id}>{this.props.users[id].username}</div>
-                    ))}
-       */}
+    
             </div>
           </div>
 
