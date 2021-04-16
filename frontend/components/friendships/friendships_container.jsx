@@ -4,14 +4,15 @@ import{ fetchUser, fetchUsers } from '../../actions/user_actions'
 import { createFriend, deleteFriend } from '../../actions/friendship_actions';
 import FriendshipsIndex from './friendships_index';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   let usersArr = Object.values(state.entities.users);
   let currentUser = state.entities.users[state.session.id];
-  // console.log(state.entities.users[state.session.id])
+  // console.log(ownProps.profile.followings)
   
   return ({
-     users: usersArr,
-    currentUser: currentUser
+    users: usersArr,
+    currentUser: currentUser,
+    profile: ownProps.profile,
   })
    
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const FriendIndexItem = ({ refetch, friend, currentUser, handlefriend}) => (
+const FriendIndexItem = ({ refetch, friend, profile, handlefriend}) => (
   <div className='per-friend-button'>   
 
     {(friend.followed_by_current_user) ? (
@@ -15,9 +15,3 @@ const FriendIndexItem = ({ refetch, friend, currentUser, handlefriend}) => (
 );
 
 export default FriendIndexItem;
-
-// refetch={this.refetch.bind(this)}
-// friend={friend}
-// currentUser={this.props.currentUser}
-// createFriend={this.props.createFriend}
-// deleteFriend={this.props.deleteFriend}

@@ -24,7 +24,7 @@ class FriendButton extends React.Component {
     }
 
     componentDidMount() {
-      console.log(this.props)
+      // console.log(this.props)
       this.props.fetchUsers();
       this.props.fetchUser(this.props.profile.id); 
     }
@@ -33,7 +33,7 @@ class FriendButton extends React.Component {
       // e.preventDefault()
       if (this.props.profile.followed_by_current_user){
         this.refetch();
-        console.log(this.props.profile)
+        // console.log(this.props.profile)
         this.props.deleteFriend(this.props.profile.id).then(() => {
           this.setState({ followed: false });
         });

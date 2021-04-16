@@ -9,6 +9,7 @@ class Api::FriendshipsController < ApplicationController
     @follow = Friendship.new
     @follow.requester_id = current_user.id
     @follow.requested_id = params[:id]
+    
   if @follow.save 
     @following = @follow.following #followee =following
     render "api/posts/index" 
