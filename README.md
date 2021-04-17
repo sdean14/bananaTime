@@ -2,7 +2,7 @@
 
 
 # Tomobook
-[Tomobook](https://tomobook.herokuapp.com/#/login) is a clone of the populasocial media site [Facebook](https://www.facebook.com). Here users can connect with others (make friends),post on  walls and upload profile.  
+[Tomobook](https://tomobook.herokuapp.com/#/login) is a clone of the popular social media site [Facebook](https://www.facebook.com). The word tomo actually comes from the Japanese word for friend. On my site users can connect with others (make friends), post comments and update their profiles.  
 
 ## Technologies 
 * React/Redux
@@ -19,27 +19,28 @@
 
 ## Key Features
 1. User Authentication 
-1. Making Your Profile
-2. Following friends
-3. Posting On Walls
-4. News Feed
+1. Making A Profile
+2. Following Friends
+3. Posting To Your Own News Feed
+4. A News Feed Of All Users News
 5. S3 AWS Image hosting
 
 ## Code
 
 ### User Authentication
-New users can signup and make an account. All they need is a username, email, password(6 characters or more) and birthday.
+New users can signup and make an account. All they need is a username, email, password (6 characters or more) and a birthday.
 
-Existing users can login in withtheir email and password. Both log in and sign up will take you to news feed page.
+Existing users can log in with their email and password. Both log in and sign up will take you to the news feed page first.
 
 ### Making Your Profile
-You can edit your profile info on the profile edit page, you can upload profile picture also.
+You can edit your profile info on the profile edit page, you can upload profile pictures also.
 
 
 ### Making Friends
-On the news feed page, you can see all of the users name. Clicking on their username will take you to their profile page and you will be able to become friend by clicking friend button.
+On the news feed page, you can see all of the users names. Clicking on a username will take you to their profile page and you will be able to become frienda by clicking the friend button.
 
 #### Filtering Friends
+
 ```javascript
 renderFriendList() {
     if (this.props.profile.follows) {
@@ -74,6 +75,7 @@ renderFriendList() {
 ```
 
 ### Posting On Walls
-You can easily post on your own wall or on news feed page. 
-You can also delete and edit your own posts. 
+You can easily post to your own news feed page. 
+
+You can also delete and edit your own posts
 
