@@ -64,8 +64,6 @@ class FriendshipsIndex extends React.Component {
    
     return (
       <div>
-     
-
         {friendListIds.map(id => (
           <div key={id}>{this.props.users[id]}</div>
         ))}
@@ -79,8 +77,6 @@ class FriendshipsIndex extends React.Component {
     if (!this.props.users || this.props.users.length <= 1) {
       return null
     };
-    //test
-    //  if (!this.arr) { return null}     
     let friendsYouFollow = [];
     this.props.users.map((user) => {
       if (user.followed_by_current_user && user !== this.props.currentUser) {

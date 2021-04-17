@@ -1,24 +1,79 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Tomobook
+[Tomobook](https://tomobook.herokuapp.com/#/login) is a clone of the populasocial media site [Facebook](https://www.facebook.com). Here users can connect with others (make friends),post on  walls and upload profile.  
 
-* Ruby version
+## Technologies 
+* React/Redux
+* Ruby on Rails
+* PostgreSQL
+* Javascript
+* JQuery (ajax)
+* Heroku
+* CSS
+* Webpack
+* Amazon Web Service
 
-* System dependencies
+[Design Docs](https://github.com/sdean14/bananaTime/wiki) 
 
-* Configuration
+## Key Features
+1. User Authentication 
+1. Making Your Profile
+2. Following friends
+3. Posting On Walls
+4. News Feed
+5. S3 AWS Image hosting
 
-* Database creation
+## Code
 
-* Database initialization
+### User Authentication
+New users can signup and make an account. All they need is a username, email, password(6 characters or more) and birthday.
 
-* How to run the test suite
+Existing users can login in withtheir email and password. Both log in and sign up will take you to news feed page.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Making Your Profile
+You can edit your profile info on the profile edit page, you can upload profile picture also.
 
-* Deployment instructions
 
-* ...
+### Making Friends
+On the news feed page, you can see all of the users name. Clicking on their username will take you to their profile page and you will be able to become friend by clicking friend button.
+
+#### Filtering Friends
+```javascript
+renderFriendList() {
+    if (this.props.profile.follows) {
+      let friendId = [];
+      let arr = this.props.profile.follows;
+      for (let i = 0; i < arr.length; i++) {
+        for (const key in arr[i]) {
+          friendId.push(arr[i][key])
+        }
+      }
+   
+      let fin = [];
+      for (let j = 0; j < this.props.users.length; j++) {
+        for (const key in this.props.users[j]) {
+          if ((friendId).includes(this.props.users[j][key])) {
+            fin.push(this.props.users[j].username)
+          }
+        }
+      }
+
+      return (
+        <div>
+          <div>{fin.map((fName, idx) => (
+            <li className='per-friend' key={idx}>  <div className='per-fname'>{fName}</div></li>
+          ))}
+          </div>
+        </div>
+      )
+    }
+  }
+
+```
+
+### Posting On Walls
+You can easily post on your own wall or on news feed page. 
+You can also delete and edit your own posts. 
+
