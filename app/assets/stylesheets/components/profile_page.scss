@@ -60,8 +60,12 @@
   font-size: 25px;
   color: gray;
   text-align: center;
+  
+  &:hover {
+    
+  }
 }
-.fb-container{
+.fb-container {
   order: 3;
   width: 80%;
   display: flex;
@@ -69,7 +73,7 @@
   margin-top: 10px;
   
 
-  .friend-button{
+  .friend-button {
   background: #1877f2;
   font-size: 18px;
   color: #fff;

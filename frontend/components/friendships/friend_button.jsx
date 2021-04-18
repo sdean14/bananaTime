@@ -46,7 +46,9 @@ class FriendButton extends React.Component {
     }
     
     render(){
-
+      if(this.props.profile.id === this.props.currentUser.id){      
+        return null;
+      }
       return(
         <div >
           {(this.props.profile.followed_by_current_user) ? (
