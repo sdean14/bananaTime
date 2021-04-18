@@ -115,9 +115,10 @@ class ProfileForm extends React.Component {
             /></div>
             <p>posts</p>
             <p>about</p>
-            <p><Link to={'/following'}>
+            <p>friends</p>
+            {/* <p><Link to={'/following'}>
               <button className='profile-links-buttons' >friends</button>
-            </Link></p>
+            </Link></p> */}
           </div>
         </header>
 

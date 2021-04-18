@@ -49,27 +49,27 @@ class FriendshipsIndex extends React.Component {
     }
   }
 
-  isFriend() {
-    if (!this.props.profile.followings) { return null }
-    let friendListIds = [];
-    let emptyArr = [];
-    let arr = emptyArr.concat((this.props.profile.followers), (this.props.profile.followings))
-    for (let i = 0; i < arr.length; i++) {
-      for (const key in arr[i]) {
-        if (!friendListIds.includes(arr[i][key])) {
-          friendListIds.push(arr[i][key])
-        }
-      }
-    }
+  // isFriend() {
+  //   if (!this.props.profile.followings) { return null }
+  //   let friendListIds = [];
+  //   let emptyArr = [];
+  //   let arr = emptyArr.concat((this.props.profile.followers), (this.props.profile.followings))
+  //   for (let i = 0; i < arr.length; i++) {
+  //     for (const key in arr[i]) {
+  //       if (!friendListIds.includes(arr[i][key])) {
+  //         friendListIds.push(arr[i][key])
+  //       }
+  //     }
+  //   }
    
-    return (
-      <div>
-        {friendListIds.map(id => (
-          <div key={id}>{this.props.users[id]}</div>
-        ))}
-      </div>
-    )
-  }
+  //   return (
+  //     <div>
+  //       {friendListIds.map(id => (
+  //         <div key={id}>{this.props.users[id]}</div>
+  //       ))}
+  //     </div>
+  //   )
+  // }
 
 
   render() {
