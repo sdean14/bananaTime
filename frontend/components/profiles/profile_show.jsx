@@ -70,6 +70,7 @@ class ProfileForm extends React.Component {
       let arr = this.props.profile.follows;
       for (let i = 0; i < arr.length; i++) {
         for (const key in arr[i]) {
+          if(arr[i][key] !== this.props.profile.id)
           friendId.push(arr[i][key])
         }
       }
