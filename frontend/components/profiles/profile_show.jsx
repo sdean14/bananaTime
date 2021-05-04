@@ -46,7 +46,7 @@ class ProfileForm extends React.Component {
         myPosts.push(this.props.posts[i])
       }
     }
-   
+
     return (
       <div>{myPosts.map((post, idx) => (
         <ul key={idx} className='each-posts'>
@@ -70,15 +70,16 @@ class ProfileForm extends React.Component {
       let arr = this.props.profile.follows;
       for (let i = 0; i < arr.length; i++) {
         for (const key in arr[i]) {
-          if(arr[i][key] !== this.props.profile.id){
-          friendId.push(arr[i][key])}
+          if (arr[i][key] !== this.props.profile.id) {
+            friendId.push(arr[i][key])
+          }
         }
       }
-   
+
       let fin = [];
-      for (let j = 0; j < this.props.users.length; j++) {       
-          if ((friendId).includes(this.props.users[j].id)) {
-            fin.push(this.props.users[j].username)          
+      for (let j = 0; j < this.props.users.length; j++) {
+        if ((friendId).includes(this.props.users[j].id)) {
+          fin.push(this.props.users[j].username)
         }
       }
 
@@ -103,28 +104,26 @@ class ProfileForm extends React.Component {
           <div className='cover-img'>
             <div className='inner-img'></div>
           </div>
-        
-          <img className='profile-img' src={this.props.profile.photoUrl} alt={this.props.profile.username}/>
+
+          <img className='profile-img' src={this.props.profile.photoUrl} alt={this.props.profile.username} />
           <h1 className='username'>{this.props.profile.username}</h1>
 
           <div className='profile-links-container'>
             <div className='fb-container'><FriendButtonContainer
               profile={this.props.profile}
             /></div>
-            
-            <p className="tool-tip">posts
+            <div className='p-container'>
+              <p className="tool-tip">posts
             <span className="tool-tip-text">Features Coming Soon!</span>
-            </p>
-            <p className="tool-tip">about
+              </p>
+              <p className="tool-tip">about
             <span className="tool-tip-text">Features Coming Soon!</span>
-            </p>
-            <p className="tool-tip">friends
+              </p>
+              <p className="tool-tip">friends
             <span className="tool-tip-text">Features Coming Soon!</span>
-            </p>
-           
-            {/* <p><Link to={'/following'}>
-              <button className='profile-links-buttons' >friends</button>
-            </Link></p> */}
+              </p>
+            </div>
+
           </div>
         </header>
 
@@ -132,13 +131,13 @@ class ProfileForm extends React.Component {
 
           <div className='left-body'>
             <div>{this.renderAbout()}</div>
-            <div className='list-of-friends-you-follow'>            
-                  <div className="friends-list-containerz">
+            <div className='list-of-friends-you-follow'>
+              <div className="friends-list-containerz">
                 <ul className='friends'>Friends
                   {this.renderFriendList()}
                 </ul>
               </div>
-    
+
             </div>
           </div>
 
