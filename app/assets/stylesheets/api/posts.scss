@@ -3,11 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //new post form
-.wall {
-  // background: rgb(250, 213, 219);
-  // background-image: linear-gradient( #f0f2f5, #d7e5fa, #fff);
-  // background-image: linear-gradient(rgb(136, 165, 175), #fff, #fff, #fff);
-  
+.wall { 
   background-color: var(--web-wash);
   display: flex;
   justify-content: space-around;
@@ -21,8 +17,7 @@
 .right-sidebar-column {
   padding: 10px;
   font-size: 25px;
-  // background: lightseagreen;
-  // margin-right: 40px;
+
   
   h2 {
     text-align: center;
@@ -36,9 +31,6 @@
     padding: 8px;
     margin: 8px;
     color: rgba(0, 0, 0, 0.8);
-
-    // font-size: 25px;
-    // font-weight: bolder;
   }
   .index-each-user:hover {
     background: rgb(212, 230, 248);
@@ -52,18 +44,9 @@
   min-height: 1000px;
   padding: 10px;
   
-
-  // .post {
-  //   display: flex;
-  //   flex-direction: column-reverse;
-    // align-items: flex-start;
-    // flex-direction: row;
-  // }
 }
 
 .new-post-form {
-  // background: lightgreen;
-  // border: solid 2px lightgrey;
   font-family: 'Roboto', sans-serif;
   background: #fff;
   margin: 10px;
@@ -102,7 +85,6 @@
     color:gray;
     margin-top: 5px;
     border-radius: 10px;
-    border: none;
     padding: 8px;
     font-weight: bold;
     font-size: 15px;
@@ -111,7 +93,6 @@
   }
   .button-post:hover {
     background: rgba(153, 190, 255, 0.719);
-    border: none; 
   }
 }
   
@@ -119,7 +100,6 @@
   background: #fff;
   margin: 10px;
   border-radius: 10px;
-  // border: solid 2px lightgrey;
   padding: 15px;
   color: rgba(0, 0, 0, 0.8);
   min-height: 40px;
@@ -158,7 +138,6 @@
 
   a:hover, button:hover {
     background: rgba(153, 190, 255, 0.719);
-    border: none; 
   }
 
 }
@@ -168,13 +147,11 @@
 .left-sidebar-colum {
   padding: 10px;
   color: rgba(0, 0, 0, 0.8);
-  // background: gold;
-  // font-size: 20px;
+
 
   div {
     margin: 8px;
     border-radius: 5px;
-    // font-weight: bolder;
   }
   div:hover {
     background: rgb(212, 230, 248);
