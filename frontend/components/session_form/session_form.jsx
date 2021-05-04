@@ -53,7 +53,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Sign Up') {
 
       return (
-        <div className="login-form">
+        <div className="login-form sign-up">
           <input type="text"
             placeholder='username'
             value={this.state.username}
