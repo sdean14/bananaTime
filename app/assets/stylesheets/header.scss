@@ -1,33 +1,27 @@
-// .im-header {
-//     display: flex;
-//     background: #3973fa;
-//     width: 100%;
-//     justify-content: space-between;
-// }
+
 .header-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #fff;
-    // background: #1877f2;
     background: rgb(136, 165, 175);
     width: 100%;
     font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
 
     .fa-code-branch{
         color: rgb(0, 225, 255);
-        font-size: 25px;
+        font-size: 33px;
     }
     .fa-github{
         color: rgb(0, 255, 221);
-        font-size: 25px;
+        font-size: 33px;
     }
 
     h2 {
         color: rgb(0, 255, 242);
         padding: 10px;
-        font-size: 18px;
-        font-weight: bolder;
         display: flex;
         margin: 5px;
 
@@ -35,28 +29,10 @@
 }
 .header-logo {
     color: #fff;
-    // letter-spacing: 2px;
     padding: 10px;
-    font-size: 18px;
-    font-weight: bolder;
     display: flex;
     margin: 5px;
-
 }
-
-// .icon-img-container{
-//     width: 26px;
-//     height:26px;
-// }
-// .invs{
-//     display: block;
-//     width: 24px !important;
-//     height: 24px !important;
-//     font-size: 20px;
-//     color:black;
-// }
-
-
 
 .header-name {
     color: #fff;
@@ -67,8 +43,6 @@
     padding: 10px;
     border: none;
     color: #fff;
-    font-weight: bold;
-    font-size: 18px;
     border-radius: 5px;
     text-align: center;
     display:table-cell;
