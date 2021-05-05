@@ -32,17 +32,21 @@ class FriendButton extends React.Component {
       // e.preventDefault()
       if (this.props.profile.followed_by_current_user){
         this.refetch();
-     
+        let fbtn = document.querySelector('.friend-button');
+        fbtn.textContent = 'friend'
         this.props.deleteFriend(this.props.profile.id).then(() => {
           this.setState({ followed: false });
         });
+
       } else {
         this.refetch();
+        let fbtn = document.querySelector('.friend-button');
+        fbtn.textContent = 'unfriend'
         this.props.createFriend(this.props.profile.id).then(() => {
           this.setState({ followed: true });
         });
       }
-      window.location.reload()
+      // window.location.reload()
     }
     
     render(){
