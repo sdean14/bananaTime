@@ -29,7 +29,6 @@ class FriendButton extends React.Component {
     }
     
     handlefriend(e){
-      // e.preventDefault()
       if (this.props.profile.followed_by_current_user){
         this.refetch();
         let fbtn = document.querySelector('.friend-button');
@@ -46,6 +45,7 @@ class FriendButton extends React.Component {
           this.setState({ followed: true });
         });
       }
+      // this.forceUpdate()
       // window.location.reload()
     }
     
