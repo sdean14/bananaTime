@@ -1,4 +1,4 @@
-json.extract! user, :id, :username, :email, :birthday
+json.extract! user, :id, :username, :email, :birthday, :location, :work
 
 
 json.follow_count user.followings.count

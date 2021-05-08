@@ -5,7 +5,6 @@ import { updateProfile, fetchUser } from '../../actions/user_actions'
 import ProfileEditForm from './profile_edit_form'
 
 const mapStateToProps = ( state, ownProps ) => {
-
   return {
     profile: state.entities.users[ownProps.match.params.userId]
   };

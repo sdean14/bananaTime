@@ -5,9 +5,11 @@
 #  id              :bigint           not null, primary key
 #  birthday        :date             not null
 #  email           :string           not null
+#  location        :string
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  username        :string           not null
+#  work            :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
