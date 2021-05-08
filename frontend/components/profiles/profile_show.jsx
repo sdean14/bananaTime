@@ -28,7 +28,8 @@ class ProfileForm extends React.Component {
       <div className='render-about'>
         <p className='intro'>Intro</p>
         <p>Bithday: {this.props.profile.birthday} </p>
-        <p>From: New Zealand</p>
+        <p>Lives in: {this.props.profile.location} </p>
+        <p>Works at: {this.props.profile.work} </p>
 
         {(this.props.currentUser && this.props.currentUser.id === this.props.profile.id) ? (
           <Link to={`/users/${this.props.profile.id}/edit`}>
