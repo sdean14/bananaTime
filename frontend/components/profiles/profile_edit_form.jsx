@@ -40,6 +40,8 @@ class ProfileEditForm extends React.Component {
         const formData = new FormData();
         formData.append('user[username]', this.state.username);
         formData.append('user[birthday]', this.state.birthday);
+        formData.append('user[location]', this.state.location);
+        formData.append('user[work]', this.state.work);
         if (this.state.photoFile) {
             formData.append('user[photo]', this.state.photoFile);
         }
