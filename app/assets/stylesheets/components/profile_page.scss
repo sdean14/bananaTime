@@ -16,15 +16,19 @@
   border-radius: 10px;
   background-image: asset-url('cover8.jpg');
   background-size: contain;
+  position: relative;
+  margin-bottom: 50px;
 }
-
 
 
 .profile-img {
   background: rgb(224, 240, 167);
-  height: 168px;
-  width: 168px;
+  height: 180px;
+  width: 180px;
   border-radius: 50%;
+  border: solid 4px #fff;
+  position: absolute;
+  top: 28%;
 }
 
 .profile-page .username {
@@ -32,7 +36,7 @@
   font-size: 40px;
   height: 78px;
   width: 1000px;
-  border-bottom: solid 2px rgb(171, 196, 207);
+  border-bottom: solid 4px rgb(171, 196, 207);
 }
 
 .profile-links-container {
@@ -44,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 83%;
   margin-left: 90px;
 }
 .profile-links-container p {
@@ -55,9 +59,6 @@
   text-align: center;
   text-align: center;
   
-  &:hover {
-    
-  }
 }
 .fb-container {
   order: 3;
@@ -108,9 +109,15 @@
    
     p {
       font-size: 20px;
-      margin: 5px;
+      margin: 10px;
       color: rgb(65, 65, 65);
     }
+
+    .intro-fab {
+      margin-right: 10px;
+      color: rgb(141, 141, 141);
+    }
+
     .intro {
       font-size: 20px;
       color: rgb(32, 32, 32);
