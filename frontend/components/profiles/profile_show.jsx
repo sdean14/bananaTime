@@ -47,22 +47,23 @@ class ProfileForm extends React.Component {
         myPosts.push(this.props.posts[i])
       }
     }
+    if (this.props.currentUser) {
+      return (
+        <div>{myPosts.map((post, idx) => (
+          <ul key={idx} className='each-posts'>
+            <h2 className='author-name'>{this.props.profile.username}</h2>
+            <h2>{post.body}</h2>
 
-    return (
-      <div>{myPosts.map((post, idx) => (
-        <ul key={idx} className='each-posts'>
-          <h2 className='author-name'>{this.props.profile.username}</h2>
-          <h2>{post.body}</h2>
-
-          {(this.props.currentUser.id === this.props.profile.id) ? (
-            <div className='button-edit-post'>
-              <Link to={`/posts/${post.id}/edit`}>Edit</Link>
-              <button onClick={() => this.props.deletePost(post.id)}>Delete</button>
-            </div>) : null}
-        </ul>
-      ))}
-      </div>
-    )
+            {(this.props.currentUser.id === this.props.profile.id) ? (
+              <div className='button-edit-post'>
+                <Link to={`/posts/${post.id}/edit`}>Edit</Link>
+                <button onClick={() => this.props.deletePost(post.id)}>Delete</button>
+              </div>) : null}
+          </ul>
+        ))}
+        </div>
+      )
+    }
   }
 
   renderFriendList() {

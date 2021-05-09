@@ -7,12 +7,14 @@ class Greeting extends React.Component{
   constructor(props){
     super(props)
     this.state = this.props.currentUser
+
   }
   componentDidMount(){
       if (!!this.state){
       this.props.fetchUser(this.props.currentUser.id).then(<Redirect to="/" />);
      } 
   }
+
 
   render(){
   

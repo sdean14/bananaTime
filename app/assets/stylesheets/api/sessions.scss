@@ -130,9 +130,11 @@
   display: flex;
   justify-content: flex-start;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   color: gray;
-  margin-left: 40px;
+  margin: 20px;
+  width: 100%;
+  justify-content: center;
 } 
 
 .footer-copyright p {
