@@ -7,9 +7,6 @@ class ProfileEditForm extends React.Component {
         this.state.photoFile = null;
         this.state.photoUrl = null;
         this.state.redirect = false;
-        this.state.work = '';
-        this.state.location = '';
-
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
