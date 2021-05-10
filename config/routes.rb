@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :friendships, only: [:create, :destroy] 
     resource :session, only: [:create, :destroy]
     resources :posts, except: [:new, :edit]
+    resources :comments, except: [:new, :edit]
+
 
   end
  
