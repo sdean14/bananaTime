@@ -29,11 +29,11 @@ class User < ApplicationRecord
 # --following relation--
     has_many :friends_you_follow, #followships
     foreign_key: :requester_id,
-    class_name: :"Friendship"
+    class_name: :Friendship
     
     has_many :fanships, #friends_following_you, #
     foreign_key: :requested_id,
-    class_name: :"Friendship"
+    class_name: :Friendship
     
     has_many :followers,
     through: :fanships, #list of(?)friends_following_you,
@@ -46,9 +46,15 @@ class User < ApplicationRecord
     #posts
     has_many :posts,
     foreign_key: :author_id,
-    class_name: :"Post"
+    class_name: :Post
 
     has_one_attached :photo
+
+    #comments
+
+    has_many :comments,
+    foreign_key: :commenter_id,
+    class_name: :Comment
 
     # spire
     def self.find_by_credentials(email, password)
