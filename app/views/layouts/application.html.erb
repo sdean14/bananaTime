@@ -5,6 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta property="og:title" content="Tomobook" />
+    <meta property='og:image' content="<%= image_url('for-linkedin.png') %>"/>
+    <meta property="og:description" content="Tomobook is a Facebook clone. Created with Ruby on Rails backend and React frontend"/>
+    <meta property="og:url" content="https://tomobook.herokuapp.com/#/login" />
+
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
