@@ -8,7 +8,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(post_params)
+    @comment = Comment.new(comment_params)
     @comment.commenter_id = current_user.id
     if @comment.save
       render :show
@@ -20,7 +20,7 @@ class Api::CommentsController < ApplicationController
   def update
     @comment = current_user.comments.find_by(id: params[:id])
 
-    if @comment && @comment.update(post_params)
+    if @comment && @comment.update(comment_params)
       render :show
     else
       render json: ["You can't edit this Comment"], status: 422
@@ -38,7 +38,7 @@ class Api::CommentsController < ApplicationController
   end
 
   private
-  def Comment_params
+  def comment_params
     params.require(:comment).permit(:body, :commenter_id, :post_id)
   end
 end
