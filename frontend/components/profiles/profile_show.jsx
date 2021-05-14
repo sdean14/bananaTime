@@ -4,7 +4,7 @@ import { logoutCurrentUser } from '../../actions/session_action';
 import FriendshipsIndex from '../friendships/friendships_index'
 import FriendshipContainer from '../friendships/friendships_container';
 import PostFormContainer from '../posts/post_create_form_container'
-import PostItemContainer from '../posts/post_item_container';
+// import PostItemContainer from '../posts/post_item_container';
 import FriendButtonContainer from '../friendships/friend_button_container';
 
 class ProfileForm extends React.Component {
@@ -81,14 +81,14 @@ class ProfileForm extends React.Component {
       let fin = [];
       for (let j = 0; j < this.props.users.length; j++) {
         if ((friendId).includes(this.props.users[j].id)) {
-          fin.push(this.props.users[j].username)
+          fin.push(this.props.users[j])
         }
       }
 
       return (
         <div>
-          <div>{fin.map((fName, idx) => (
-            <li className='per-friend' key={idx}>  <div className='per-fname'>{fName}</div></li>
+          <div>{fin.map((user, idx) => (
+            <li className='per-friend' key={idx}>  <div className='per-fname'><Link to={`/users/${user.id}/show`}>{user.username}</Link></div></li>
           ))}
           </div>
         </div>
