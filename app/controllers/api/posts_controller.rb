@@ -1,12 +1,17 @@
 class Api::PostsController < ApplicationController
 
-  def index
-    @posts = Post.all
-  end
+  # def index
+  #   @posts = Post.all    
+  # end
 
-  def show
-    @post = Post.find(params[:id])
-  end
+  def index
+    @posts = if params[:user_id]
+              Post.where(author_id: params[:user_id])
+            else
+              Post.all
+            end
+    render 'api/posts/index'
+end
 
   def create
     @post = Post.new(post_params)

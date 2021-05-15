@@ -20,7 +20,7 @@ const mDTP = (dispatch) => ({
   fetchPosts: () => dispatch(fetchPosts()),
   deletePost: (postId) => dispatch(deletePost(postId)),
   fetchUsers: () => dispatch(fetchUsers()),
-  fetchUser: currentUser => dispatch(fetchUser(currentUser)),  
+  fetchUser: user => dispatch(fetchUser(user)),  
 
 })
 

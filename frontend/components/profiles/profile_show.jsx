@@ -111,9 +111,11 @@ class ProfileForm extends React.Component {
           <h1 className='username'>{this.props.profile.username}</h1>
 
           <div className='profile-links-container'>
-            <div className='fb-container'><FriendButtonContainer
+            <div className='fb-container'>
+              <FriendButtonContainer
               profile={this.props.profile}
-            /></div>
+            />
+            </div>
             <div className='p-container'>
               <p className="tool-tip">posts
             <span className="tool-tip-text">Features Coming Soon!</span>

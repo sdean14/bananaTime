@@ -28,4 +28,4 @@ bundle.js.map
 npm-debug.log
 Gemfile.lock
 /tmp
-/log
+/log/development

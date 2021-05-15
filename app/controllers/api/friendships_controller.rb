@@ -12,7 +12,8 @@ class Api::FriendshipsController < ApplicationController
     
   if @follow.save 
     @following = @follow.following #followee =following
-    render "api/posts/index" 
+    # render "api/posts/index" 
+    render :show
    
   else
     render json: @follow.errors.full_messages
@@ -23,7 +24,8 @@ class Api::FriendshipsController < ApplicationController
     @follow = Friendship.find_by(requester_id: current_user.id, requested_id: params[:id])
     @following = @follow.following
     @follow.destroy
-    render "api/posts/index" 
+    # render "api/posts/index" 
+    render :show
   end
 
   private
