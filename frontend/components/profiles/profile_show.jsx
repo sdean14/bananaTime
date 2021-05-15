@@ -51,7 +51,12 @@ class ProfileForm extends React.Component {
       return (
         <div>{myPosts.map((post, idx) => (
           <ul key={idx} className='each-posts'>
-            <h2 className='author-name'>{this.props.profile.username}</h2>
+            <div className='post-name-icon'>
+              <div className='post-prof-icon'>
+                {this.props.profile.photoUrl ? <img src={this.props.profile.photoUrl} alt={this.props.profile.username} /> : <div className='post-default-icon'></div>}
+              </div>
+              <h2 className='author-name'>{this.props.profile.username}</h2>
+            </div>
             <h2>{post.body}</h2>
 
             {(this.props.currentUser.id === this.props.profile.id) ? (
@@ -106,15 +111,15 @@ class ProfileForm extends React.Component {
           <div className='cover-img'>
             <div className='inner-img'></div>
           </div>
+          {this.props.profile.photoUrl ? <img className='profile-img' src={this.props.profile.photoUrl} alt={this.props.profile.username} /> : <div  className='profile-img' ></div>}
 
-          <img className='profile-img' src={this.props.profile.photoUrl} alt={this.props.profile.username} />
           <h1 className='username'>{this.props.profile.username}</h1>
 
           <div className='profile-links-container'>
             <div className='fb-container'>
               <FriendButtonContainer
-              profile={this.props.profile}
-            />
+                profile={this.props.profile}
+              />
             </div>
             <div className='p-container'>
               <p className="tool-tip">posts
@@ -130,7 +135,7 @@ class ProfileForm extends React.Component {
 
           </div>
         </header>
-        
+
 
         <div className='profile-body'>
 
