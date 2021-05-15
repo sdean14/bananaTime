@@ -130,6 +130,7 @@ class ProfileForm extends React.Component {
 
           </div>
         </header>
+        
 
         <div className='profile-body'>
 
@@ -137,7 +138,7 @@ class ProfileForm extends React.Component {
             <div>{this.renderAbout()}</div>
             <div className='list-of-friends-you-follow'>
               <div className="friends-list-containerz">
-                <ul className='friends'>Friends
+                <ul className='friends'>Friends You Follow
                   {this.renderFriendList()}
                 </ul>
               </div>
