@@ -12,5 +12,3 @@ Rails.application.routes.draw do
  
   root 'static_pages#root'
 end
-# resources :friendships, only: [:create]
-# delete "/friendships", to: "followings#destroy"
