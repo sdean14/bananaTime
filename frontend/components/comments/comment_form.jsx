@@ -6,7 +6,7 @@ class CommentForm extends React.Component {
     super(props)
     this.state = {
         body: '',
-        auther_id: this.props.currentUser.id,
+        commenter_id: this.props.currentUser.id,
         post_id: null,
       }
 
