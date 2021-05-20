@@ -8,13 +8,6 @@ const mSTP = (state, ownProps) => {
   // console.log(state, 'oooooo')
   return ({
     currentUser: state.entities.users[state.session.id],
-    // comments: state.comments,
-    comment: {
-      body: '',
-      auther: state.entities.users[state.session.id],
-      post_id: null,
-      // post_id is working??
-    }
   })
 }
 

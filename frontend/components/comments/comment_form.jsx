@@ -4,7 +4,11 @@ import React from 'react';
 class CommentForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = this.props.comment;
+    this.state = {
+        body: '',
+        auther_id: this.props.currentUser.id,
+        post_id: null,
+      }
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -20,7 +24,7 @@ class CommentForm extends React.Component {
     e.preventDefault();
     if (this.props.post_id){
       let newComment = this.state;
-      newComment[post_id] = this.props.post_id
+      newComment.post_id = this.props.post_id
       this.props.createComment(newComment);
     }
 
