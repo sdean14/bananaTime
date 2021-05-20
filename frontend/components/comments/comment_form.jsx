@@ -7,12 +7,12 @@ class CommentForm extends React.Component {
     this.state = {
         body: '',
         commenter_id: this.props.currentUser.id,
-        post_id: null,
+        post_id: this.props.post_id,
       }
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    console.log(this.props, 'ooooo')
+    // console.log(this.props, 'ooooo')
   }
 
  
@@ -22,11 +22,9 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.post_id){
-      let newComment = this.state;
-      newComment.post_id = this.props.post_id
-      this.props.createComment(newComment);
-    }
+    this.props.createComment(this.state);
+    
+    this.setState({'body': ''})
 
   }
 

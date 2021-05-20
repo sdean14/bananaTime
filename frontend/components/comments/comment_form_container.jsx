@@ -5,17 +5,17 @@ import { fetchPost, updatePost } from '../../actions/post_actions';
 import CommentForm from './comment_form';
 
 const mSTP = (state, ownProps) => {
-  // console.log(state, 'oooooo')
+  // console.log(state, '11111')
+  // console.log(ownProps.post_id,'0222')
   return ({
     currentUser: state.entities.users[state.session.id],
+    post_id: ownProps.post_id
   })
 }
 
 const mDTP = (dispatch) => {
   return({
     createComment: (comment) => dispatch(createComment(comment)),
-    // fetchPost: postId => dispatch(fetchPost(postId)),
-
   })
 }
 

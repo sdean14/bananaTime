@@ -11,8 +11,6 @@ const mSTP = (state, ownProps) => {
     currentUser: state.entities.users[state.session.id],
     posts: Object.values(state.posts),
     users: state.entities.users,
-    // wallUser: state.entities.users[wallId],
-    // author: state.entities.users[ownProps.post.author_id],
   })
 }
 

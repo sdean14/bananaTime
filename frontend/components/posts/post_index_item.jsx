@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CommentFormContainer from '../comments/comment_form_container'
+import CommentIndexContainer from '../comments/comment_index_container';
+import CommentFormContainer from '../comments/comment_form_container';
 
 // import comment index vontainer and create comment form
 
@@ -24,6 +25,8 @@ const PostIndexItem = ({ author, post, deletePost, currentUser }) => (
   
       {/* here i render comment index
       and create comment form each takes post as arg */}
+      <CommentIndexContainer 
+        post_id={post.id}/>
       <CommentFormContainer 
         post_id={post.id}
       />
