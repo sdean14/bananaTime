@@ -26,7 +26,8 @@ const PostIndexItem = ({ author, post, deletePost, currentUser }) => (
       {/* here i render comment index
       and create comment form each takes post as arg */}
       <CommentIndexContainer 
-        post_id={post.id}/>
+        // post_id={post.id}
+        />
       <CommentFormContainer 
         post_id={post.id}
       />

@@ -1,22 +1,23 @@
 class Api::PostsController < ApplicationController
 
-  # def index
-  #   @posts = if params[:user_id]
-  #             Post.where(author_id: params[:user_id])
-  #           else
-  #             Post.all
-  #           end
-  #   render 'api/posts/index'
-  # end
-
-  def index      
-    if params[:wallId] == 'all'
-        @posts = Post.includes(:comments).all
-    else
-        Post.all
-    end
-    render :index
+  def index
+    @posts = if params[:user_id]
+              Post.where(author_id: params[:user_id])
+            else
+              Post.all
+            end
+    render 'api/posts/index'
   end
+
+  # def index      
+  #   @posts = Post.all
+    # if params[:wallId] == 'all'
+    #     @posts = Post.includes(:comments).all
+    # else
+    #     Post.all
+    # end
+  #   render :index
+  # end
 
   def create
     @post = Post.new(post_params)
