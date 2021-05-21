@@ -34,3 +34,4 @@ Post.delete_all
 Post.create!(id: 1, :body => "Body 1", author_id: 1)
 Post.create!(id: 2, :body => "Body 2", author_id: 2)
 
+Comment.delete_all

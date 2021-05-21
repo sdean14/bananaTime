@@ -7,25 +7,25 @@ class CommentForm extends React.Component {
     this.state = {
         body: '',
         commenter_id: this.props.currentUser.id,
-        // post_id: this.props.post_id,
+        post_id: this.props.post_id,
       }
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
-     console.log(this.state,'---', this.props, 'ooooo')
   }
-
+  
   // componentDidMount(){
-  //   this.props.fetchPost(this.props.post_id)
-  // }
- 
-  update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.createComment(this.state);
+    //   this.props.fetchPost(this.props.post_id)
+    // }
+    
+    update(field) {
+      return e => this.setState({ [field]: e.currentTarget.value });
+    }
+    
+    handleSubmit(e) {
+      console.log(this.state,'---', this.props, 'ooooo')
+      e.preventDefault();
+      this.props.createComment(this.state);
     
     this.setState({'body': ''})
 
