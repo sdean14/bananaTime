@@ -33,7 +33,7 @@ class PostIndex extends React.Component{
             <PostCreateFormContainer/>
             <div className='post'>
               <ul>
-                { this.props.posts.map((post, idx) => (
+                { this.props.posts.reverse().map((post, idx) => (
                   <PostIndexItem
                   users={this.props.users}
                   currentUser={this.props.currentUser}

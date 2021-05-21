@@ -49,7 +49,7 @@ class ProfileForm extends React.Component {
     }
     if (this.props.currentUser) {
       return (
-        <div>{myPosts.map((post, idx) => (
+        <div>{myPosts.reverse().map((post, idx) => (
           <ul key={idx} className='each-posts'>
             <div className='post-name-icon'>
               <div className='post-prof-icon'>
