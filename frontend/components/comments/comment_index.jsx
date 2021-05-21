@@ -22,9 +22,9 @@ class CommentIndex extends React.Component {
               <li  key={idx}>
   
                 {comment.body}
-                <Link to={`/users/${comment.commenter_id}/show`}>
-                  <div>{this.props.users[comment.commenter_id].photoUrl ? <img src={this.props.users[comment.commenter_id].photoUrl} alt={comment.commenter_id} /> : <div className='post-default-icon'></div>}</div>
-                  <div >{this.props.users[comment.commenter_id] ? this.props.users[comment.commenter_id].username : null}</div>
+                <Link className='post-name-icon' to={`/users/${comment.commenter_id}/show`}>
+                  <div  className='post-prof-icon'>{this.props.users[comment.commenter_id].photoUrl ? <img src={this.props.users[comment.commenter_id].photoUrl} alt={comment.commenter_id} /> : <div className='post-default-icon'></div>}</div>
+                  <div className='author-name'>{this.props.users[comment.commenter_id] ? this.props.users[comment.commenter_id].username : null}</div>
                 </Link>
               </li>
             ))
@@ -37,7 +37,7 @@ class CommentIndex extends React.Component {
 
     return (
       <div>
-        { this.renderComment()}
+        { this.renderComment() }
 
       </div>
     )

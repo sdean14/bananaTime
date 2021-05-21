@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CommentFormContainer from '../comments/comment_form_container';
 
-// import comment index vontainer and create comment form
-
 
 const PostIndexItem = ({ author, post, deletePost, currentUser }) => (
   // console.log(user)
@@ -18,19 +16,18 @@ const PostIndexItem = ({ author, post, deletePost, currentUser }) => (
     <h2 className='body'>{post.body}</h2>
     {currentUser === author ? (
       <div className='button-edit-post'>
-        <Link to={`/posts/${post.id}/edit`}>Edit</Link>
-        <button onClick={() => deletePost(post.id)}>Delete</button>
+        <Link to={`/posts/${post.id}/edit`}><i class="far fa-edit"></i>Edit</Link>
+        <button onClick={() => deletePost(post.id)}><i class="far fa-trash-alt"></i>Delete</button>
       </div>) : null}
-      
-  
-      {/* here i render comment index
-      and create comment form each takes post as arg */}
-      <CommentIndexContainer 
-        post_id={post.id}
-        />
-      <CommentFormContainer 
+
+    <div className='comment-container'>
+      <CommentIndexContainer
         post_id={post.id}
       />
+      <CommentFormContainer
+        post_id={post.id}
+      />
+    </div>
   </li>
 );
 

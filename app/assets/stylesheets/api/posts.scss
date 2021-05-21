@@ -131,30 +131,35 @@
   .body {
     text-align: center;
   }
+
+  .comment-container {
+    border-top: solid 1px lightgrey;
+  }
+
   
 }
+
 .button-edit-post {
   width: auto;
   color:gray;
   margin-top: 5px;
-  font-weight: bold;
+  font-weight:bolder;
   font-size: 15px;
   display: flex;
-  justify-content: flex-end;
-  padding-right: 10px;
+  justify-content: space-around;
+  border-top: solid 1px lightgrey;
 
   a, button {
-    border-radius: 10px;
-    padding: 8px;
-    background: rgba(174, 192, 224, 0.719);
-    border: solid 1px lightgrey;
-    margin-right: 10px;
+    padding: 10px;
+  }
+
+  .far {
+    padding-right: 10px;
   }
 
   a:hover, button:hover {
-    background: rgba(153, 190, 255, 0.719);
+    color: rgba(138, 152, 179, 0.719);
   }
-
 }
 
 
