@@ -15,9 +15,9 @@ const PostIndexItem = ({ author, post, deletePost, currentUser }) => (
     <h2 className='body'>{post.body}</h2>
     {currentUser === author ? (
       <div className='button-edit-post'>
-        <Link to={`/posts/${post.id}/edit`}><i className="far fa-edit"></i>Edit</Link>
+        <Link className='edt-btn' to={`/posts/${post.id}/edit`}><i className="far fa-edit"></i>Edit</Link>
         <button onClick={() => deletePost(post.id)}><i className="far fa-trash-alt"></i>Delete</button>
-      </div>) : null}
+      </div>) : <div className='button-edit-post'><a><i className="far fa-comment-alt"></i>Comment</a></div>}
 
     <div className='comment-container'>
       <CommentIndexContainer

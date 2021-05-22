@@ -15,18 +15,27 @@
   .comment-name-text {
     background: #ECF3FF;;
     font-size: 18px;
-    width: 100%;
+    width: auto;
     height: auto;
     margin: 5px;
-    padding: 8px 12px;
+    padding: 8px 15px;
     border-radius: 20px;
     overflow-wrap: anywhere;
-
 
     .name {
       font-weight: bold;
       font-size: 15px;
     }
+  }
+
+  .far {
+    color:gray;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 5px;
+  }
+  .far:hover {
+    color: rgba(138, 152, 179, 0.719);
   }
 
 }
