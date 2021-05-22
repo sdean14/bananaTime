@@ -6,10 +6,13 @@ import CommentFormContainer from '../comments/comment_form_container';
 
 const PostIndexItem = ({ author, post, deletePost, currentUser }) => (
   <li className='each-posts'>
-
+{/* {console.log(post.created_at.slice(0,10))} */}
     <Link className='post-name-icon' to={`/users/${post.author_id}/show`}>
       <div className='post-prof-icon'>{author && author.photoUrl ? <img src={author.photoUrl} alt={author.username} /> : <div className='post-default-icon'></div>}</div>
+     <div>
       <div className='author-name' >{author ? author.username : null}</div>
+      <div className='posted-at'>{post.created_at.slice(0,10)}</div>
+     </div>
     </Link>
 
     <h2 className='body'>{post.body}</h2>

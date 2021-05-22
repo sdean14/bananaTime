@@ -54,7 +54,10 @@ class ProfileForm extends React.Component {
               <div className='post-prof-icon'>
                 {this.props.profile.photoUrl ? <img src={this.props.profile.photoUrl} alt={this.props.profile.username} /> : <div className='post-default-icon'></div>}
               </div>
-              <h2 className='author-name'>{this.props.profile.username}</h2>
+              <div>
+                <h2 className='author-name'>{this.props.profile.username}</h2>
+                <div className='posted-at'>{post.created_at.slice(0, 10)}</div>
+              </div>
             </div>
             <h2 className='body'>{post.body}</h2>
 
