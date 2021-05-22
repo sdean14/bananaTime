@@ -1,19 +1,18 @@
 import React from 'react';
-import { Route, Switch, Link, Redirect } from 'react-router-dom';
-import { logoutCurrentUser } from '../../actions/session_action';
+import { Link, Redirect } from 'react-router-dom';
+// import { logoutCurrentUser } from '../../actions/session_action';
 import FriendshipsIndex from '../friendships/friendships_index'
 import FriendshipContainer from '../friendships/friendships_container';
 import PostFormContainer from '../posts/post_create_form_container'
-// import PostItemContainer from '../posts/post_item_container';
 import FriendButtonContainer from '../friendships/friend_button_container';
+import CommentIndexContainer from '../comments/comment_index_container';
+import CommentFormContainer from '../comments/comment_form_container';
 
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
 
-
     this.renderFriendList = this.renderFriendList.bind(this)
-
   }
 
   componentDidMount() {
@@ -57,13 +56,22 @@ class ProfileForm extends React.Component {
               </div>
               <h2 className='author-name'>{this.props.profile.username}</h2>
             </div>
-            <h2>{post.body}</h2>
+            <h2 className='body'>{post.body}</h2>
 
             {(this.props.currentUser.id === this.props.profile.id) ? (
               <div className='button-edit-post'>
                 <Link to={`/posts/${post.id}/edit`}>Edit</Link>
                 <button onClick={() => this.props.deletePost(post.id)}>Delete</button>
-              </div>) : null}
+              </div>) : <div className='button-edit-post'><a><i className="far fa-comment-alt"></i>Comment</a></div>}
+
+            <div className='comment-container'>
+              <CommentIndexContainer
+                post_id={post.id}
+              />
+              <CommentFormContainer
+                post_id={post.id}
+              />
+            </div>
           </ul>
         ))}
         </div>
@@ -111,7 +119,7 @@ class ProfileForm extends React.Component {
           <div className='cover-img'>
             <div className='inner-img'></div>
           </div>
-          {this.props.profile.photoUrl ? <img className='profile-img' src={this.props.profile.photoUrl} alt={this.props.profile.username} /> : <div  className='profile-img' ></div>}
+          {this.props.profile.photoUrl ? <img className='profile-img' src={this.props.profile.photoUrl} alt={this.props.profile.username} /> : <div className='profile-img' ></div>}
 
           <h1 className='username'>{this.props.profile.username}</h1>
 
