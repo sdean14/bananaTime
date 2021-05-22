@@ -1,3 +1,45 @@
 // Place all the styles related to the api::comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.each-comment {
+  // background: lightskyblue;
+  display: flex;
+  align-items: center;
+  
+  .post-prof-icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  .comment-name-text {
+    background: #ECF3FF;;
+    font-size: 18px;
+    width: 100%;
+    height: auto;
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    overflow-wrap: anywhere;
+
+
+    .name {
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+
+}
+
+.comment-form-container {
+  background: #ECF3FF;;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 8px 12px;
+
+  textarea {
+    resize: none;
+    width: 100%;
+  }
+}

@@ -4,8 +4,7 @@ import { fetchComments, updateComment, deleteComment } from '../../actions/comme
 import { fetchUsers } from '../../actions/user_actions';
 
 const mSTP = (state, ownProps) => {
- console.log(Object.values(state.comments))
-  let id  = ownProps.post_id //change this to ownProps.post_id
+  let id  = ownProps.post_id 
   return ({
     post_id: ownProps.post_id,
     currentUser: state.entities.users[state.session.id],

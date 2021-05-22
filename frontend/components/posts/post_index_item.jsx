@@ -5,7 +5,6 @@ import CommentFormContainer from '../comments/comment_form_container';
 
 
 const PostIndexItem = ({ author, post, deletePost, currentUser }) => (
-  // console.log(user)
   <li className='each-posts'>
 
     <Link className='post-name-icon' to={`/users/${post.author_id}/show`}>
@@ -16,8 +15,8 @@ const PostIndexItem = ({ author, post, deletePost, currentUser }) => (
     <h2 className='body'>{post.body}</h2>
     {currentUser === author ? (
       <div className='button-edit-post'>
-        <Link to={`/posts/${post.id}/edit`}><i class="far fa-edit"></i>Edit</Link>
-        <button onClick={() => deletePost(post.id)}><i class="far fa-trash-alt"></i>Delete</button>
+        <Link to={`/posts/${post.id}/edit`}><i className="far fa-edit"></i>Edit</Link>
+        <button onClick={() => deletePost(post.id)}><i className="far fa-trash-alt"></i>Delete</button>
       </div>) : null}
 
     <div className='comment-container'>
