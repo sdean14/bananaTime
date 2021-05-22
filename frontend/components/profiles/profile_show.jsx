@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 // import { logoutCurrentUser } from '../../actions/session_action';
-import FriendshipsIndex from '../friendships/friendships_index'
-import FriendshipContainer from '../friendships/friendships_container';
+// import FriendshipsIndex from '../friendships/friendships_index'
+// import FriendshipContainer from '../friendships/friendships_container';
 import PostFormContainer from '../posts/post_create_form_container'
 import FriendButtonContainer from '../friendships/friend_button_container';
 import CommentIndexContainer from '../comments/comment_index_container';
@@ -11,6 +11,9 @@ import CommentFormContainer from '../comments/comment_form_container';
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      page: 'timeline'
+    }
 
     this.renderFriendList = this.renderFriendList.bind(this)
   }
@@ -112,6 +115,38 @@ class ProfileForm extends React.Component {
     }
   }
 
+  handlePageToRender(field) {
+    return (e) => {
+      this.setState({ page: field });
+    }
+  }
+
+  renderPage() {
+    if (this.state.page === 'about') {
+      return (
+        <div className='modal-con'>
+          <div className='mask'></div>
+          <div className='dropdown'>
+            {this.renderAbout()}
+          </div>
+        </div>
+      )
+    } else if (this.state.page === 'timeline') {
+      return (
+        <div></div>
+      )
+    } else if (this.state.page === 'friends') {
+      return (
+        <div className='modal-con'>
+          <div className='mask'></div>
+          <div className='dropdown'>
+            {this.renderFriendList()}
+          </div>
+        </div>
+      )
+    }
+  }
+
 
   render() {
     if (!this.props.profile) { return null }
@@ -132,18 +167,20 @@ class ProfileForm extends React.Component {
                 profile={this.props.profile}
               />
             </div>
+
             <div className='p-container'>
-              <p className="tool-tip">posts
-            <span className="tool-tip-text">Features Coming Soon!</span>
-              </p>
+              {/* testing */}
+              <div className={this.state.page === 'about' ? 'active-profile-page' : ''} onClick={this.handlePageToRender('about')}><p>about</p></div>
+              <div className={this.state.page === 'friends' ? 'active-profile-page' : ''} onClick={this.handlePageToRender('friends')}><p>friends</p></div>
+              <div className={this.state.page === 'timeline' ? '' : ''} onClick={this.handlePageToRender('timeline')}><p>timeline</p></div>
+              {/* <p className="tool-tip">posts
+              <span className="tool-tip-text">Features Coming Soon!</span>
+                </p>
+                <p className="tool-tip">friends
+              <span className="tool-tip-text">Features Coming Soon!</span>
+                </p> */}
+              {/* <Link to={`/users/${this.props.profile.id}/show`}><p>timeline</p></Link> */}
 
-              <p className="tool-tip" >about
-            <span className="tool-tip-text">Features Coming Soon!</span>
-              </p>
-
-              <p className="tool-tip">friends
-            <span className="tool-tip-text">Features Coming Soon!</span>
-              </p>
             </div>
 
           </div>
@@ -151,6 +188,9 @@ class ProfileForm extends React.Component {
 
 
         <div className='profile-body'>
+
+          {/* testing this */}
+          <div className='renderpage'>{this.renderPage()}</div>
 
           <div className='left-body'>
             <div>{this.renderAbout()}</div>
