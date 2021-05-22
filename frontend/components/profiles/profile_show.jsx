@@ -136,9 +136,11 @@ class ProfileForm extends React.Component {
               <p className="tool-tip">posts
             <span className="tool-tip-text">Features Coming Soon!</span>
               </p>
-              <p className="tool-tip">about
+
+              <p className="tool-tip" >about
             <span className="tool-tip-text">Features Coming Soon!</span>
               </p>
+
               <p className="tool-tip">friends
             <span className="tool-tip-text">Features Coming Soon!</span>
               </p>
