@@ -29,6 +29,8 @@ class CommentIndex extends React.Component {
                   <p>{this.props.users[comment.commenter_id] ? this.props.users[comment.commenter_id].username : null}</p></Link>
                   <p>{comment.body}</p>
                 </div>
+                {comment.commenter_id === this.props.currentUser.id ? 
+                <i className="far fa-trash-alt" onClick={() => this.props.deleteComment(comment.id)}></i> : null }
 
               </li>
             ))

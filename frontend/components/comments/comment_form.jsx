@@ -11,13 +11,7 @@ class CommentForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.keyPress = this.keyPress.bind(this);
-
   }
-
-  // componentDidMount(){
-  //   this.props.fetchPost(this.props.post_id)
-  // }
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
@@ -46,7 +40,6 @@ class CommentForm extends React.Component {
       <div className='comment-form-container'>
         <form onSubmit={this.handleSubmit}>
           <textarea
-            // type='text'
             value={this.state.body}
             onChange={this.update('body')}
             placeholder={'Write a comment...'}
