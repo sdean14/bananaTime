@@ -107,7 +107,7 @@ class ProfileForm extends React.Component {
       return (
         <div>
           <div>{fin.map((user, idx) => (
-            <li className='per-friend' key={idx}> 
+            <li className='per-friend' key={idx}>
               <Link className='per-fname' to={`/users/${user.id}/show`}>
                 <i className="far fa-hand-point-right"></i>
                 <p>{user.username}</p>
@@ -175,18 +175,9 @@ class ProfileForm extends React.Component {
             </div>
 
             <div className='p-container'>
-              {/* testing */}
-              <div className={this.state.page === 'about' ? 'active-profile-page' : ''} onClick={this.handlePageToRender('about')}><p>about</p></div>
-              <div className={this.state.page === 'friends' ? 'active-profile-page' : ''} onClick={this.handlePageToRender('friends')}><p>friends</p></div>
-              <div className={this.state.page === 'timeline' ? '' : ''} onClick={this.handlePageToRender('timeline')}><p>timeline</p></div>
-              {/* <p className="tool-tip">posts
-              <span className="tool-tip-text">Features Coming Soon!</span>
-                </p>
-                <p className="tool-tip">friends
-              <span className="tool-tip-text">Features Coming Soon!</span>
-                </p> */}
-              {/* <Link to={`/users/${this.props.profile.id}/show`}><p>timeline</p></Link> */}
-
+              <div onClick={this.handlePageToRender('about')}><p>about</p></div>
+              <div onClick={this.handlePageToRender('friends')}><p>friends</p></div>
+              <div onClick={this.handlePageToRender('timeline')}><p>timeline</p></div>
             </div>
 
           </div>
@@ -195,11 +186,10 @@ class ProfileForm extends React.Component {
 
         <div className='profile-body'>
 
-          {/* testing this */}
-          <div className='renderpage'>{this.renderPage()}</div>
+          <div className={this.state.page === 'timeline' ? '' : 'renderpage'} >{this.renderPage()}</div>
 
           <div className='left-body'>
-            <div  className='render-about'>{this.renderAbout()}</div>
+            <div className='render-about'>{this.renderAbout()}</div>
             <div className='list-of-friends-you-follow'>
               <div className="friends-list-containerz">
                 <ul className='friends'>
