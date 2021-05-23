@@ -1,6 +1,7 @@
 .profile-page {
   background: lightblue;
   font-family: 'Roboto', sans-serif;
+  height: auto;
 }
 //header
 .profile-header-container {
@@ -51,6 +52,10 @@
   align-items: center;
   width: 83%;
   margin-left: 90px;
+  p:hover {
+    cursor: pointer;
+    color: rgba(138, 152, 179, 0.719);
+  }
 }
 .profile-links-container p {
   padding-right: 10px;
@@ -66,19 +71,18 @@
   display: flex;
   align-items: center;
   
-
   .friend-button {
-  background: #1877f2;
-  font-size: 18px;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 20px 10px 20px;
-  border-radius: 5px;
-  align-items: flex-end;
-}
-.friend-button:hover {
-  background: #2784ff;
-}
+    background: #1877f2;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    align-items: flex-end;
+  }
+  .friend-button:hover {
+    background: #2784ff;
+  }
 }
 
 
@@ -90,12 +94,19 @@
   justify-content: center;
   margin-top: 16px;
   position: relative;
+  padding-bottom: 40px;
 }
 
 .left-body {
   padding: 16px;
   margin: 40px;
   width: 360px;
+  
+  // friends
+  h1 {
+    margin: 10px 10px 15px;
+  }
+}
   
   .render-about{
     display: flex;
@@ -108,10 +119,10 @@
     border-radius: 10px;
     padding: 16px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-   
-    p {
+  }
+    .p {
       font-size: 20px;
-      margin: 10px;
+      margin: 20px 10px;
       color: rgb(65, 65, 65);
     }
 
@@ -128,7 +139,7 @@
       margin-bottom: 15px;
     }
     
-    button {
+    .profile-edit-button {
      font-weight: bold;
      border-radius: 5px;
      text-align: center;
@@ -138,17 +149,28 @@
      font-size: 18px;
      padding: 5px;
     }
-    button:hover{
+    .profile-edit-button:hover{
       background: rgb(169, 182, 197);
+    }
+  
 
+
+.per-friend{
+  padding: 0px;
+  font-size: 20px;
+  .per-fname {
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    color: #414141;;
+    .far {
+      margin-right: 10px;
+      color: rgb(141, 141, 141);
     }
   }
-
-  .per-fname {
-    font-size: 20px;
-    font-weight: normal;
-  }
-
+  
 }
   
 
@@ -161,22 +183,26 @@
 }
 
 // modal
-
 .renderpage {
 position:absolute;
+width: 100%;
+height: 100%;
   z-index: 2;
   top: 5%;
 
   .modal-con {
     position: relative;
+    width: 100%;
+    height: 100%;
+
     display: flex;
     justify-content: center;
   }
   .mask {
-    width: 1100px;
+    width: 100%;
+    height: 100%;
     min-height: 900px;
     background: lightgray;
-    border-radius: 10px;
     opacity: 0.8;
   }
   
@@ -186,13 +212,29 @@ position:absolute;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     border-radius: 10px;
     padding: 16px;
-    height: 600px;
+    min-height: 400px;
     width: 600px;
     z-index: 2;
-    top: 1%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin: 8px 12px;
+      color: rgb(128, 128, 128);
+    }
 
-
-
+    .intro {
+      color: rgb(128, 128, 128);
+    }
+    .profile-edit-button {
+      margin-top: 10px;
+      width: auto;
+      padding: 10px 15px;
+    }
 
   }
   

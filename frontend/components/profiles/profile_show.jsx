@@ -27,11 +27,11 @@ class ProfileForm extends React.Component {
   renderAbout() {
     if (!this.props.match.params.userId) { return null }
     return (
-      <div className='render-about'>
+      <div>
         <p className='intro'>Intro</p>
-        <p><i className="fas fa-birthday-cake intro-fab"></i>Bithday: {this.props.profile.birthday} </p>
-        <p><i className="fas fa-home intro-fab"></i>Lives in: {this.props.profile.location} </p>
-        <p><i className="fas fa-briefcase intro-fab"></i>Works at: {this.props.profile.work} </p>
+        <p className='p'><i className="fas fa-birthday-cake intro-fab"></i>Bithday: {this.props.profile.birthday} </p>
+        <p className='p'><i className="fas fa-home intro-fab"></i>Lives in: {this.props.profile.location} </p>
+        <p className='p'><i className="fas fa-briefcase intro-fab"></i>Works at: {this.props.profile.work} </p>
 
         {(this.props.currentUser && this.props.currentUser.id === this.props.profile.id) ? (
           <Link to={`/users/${this.props.profile.id}/edit`}>
@@ -107,7 +107,12 @@ class ProfileForm extends React.Component {
       return (
         <div>
           <div>{fin.map((user, idx) => (
-            <li className='per-friend' key={idx}>  <div className='per-fname'><Link to={`/users/${user.id}/show`}>{user.username}</Link></div></li>
+            <li className='per-friend' key={idx}> 
+              <Link className='per-fname' to={`/users/${user.id}/show`}>
+                <i className="far fa-hand-point-right"></i>
+                <p>{user.username}</p>
+              </Link>
+            </li>
           ))}
           </div>
         </div>
@@ -140,6 +145,7 @@ class ProfileForm extends React.Component {
         <div className='modal-con'>
           <div className='mask'></div>
           <div className='dropdown'>
+            <h2>Friends {this.props.profile.username} is following</h2>
             {this.renderFriendList()}
           </div>
         </div>
@@ -193,10 +199,11 @@ class ProfileForm extends React.Component {
           <div className='renderpage'>{this.renderPage()}</div>
 
           <div className='left-body'>
-            <div>{this.renderAbout()}</div>
+            <div  className='render-about'>{this.renderAbout()}</div>
             <div className='list-of-friends-you-follow'>
               <div className="friends-list-containerz">
-                <ul className='friends'>Friends You Follow
+                <ul className='friends'>
+                  <h1> Friends You Follow</h1>
                   {this.renderFriendList()}
                 </ul>
               </div>
