@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FriendButton from './friend_button'
 import FriendIndexItem from './friend_index_item'
 //make list of friends you follow
 class FriendshipsIndex extends React.Component {
@@ -9,29 +8,26 @@ class FriendshipsIndex extends React.Component {
     this.fetched = false;
 
     this.handlefriend = this.handlefriend.bind(this)
-
-
   }
 
   componentDidMount() {
     this.props.fetchUsers();
     this.props.fetchUser(this.props.currentUser.id);
-
   }
+
   componentDidUpdate(prevProps) {
     if (!this.fetched) {
       this.props.fetchUsers();
       this.fetched = true;
     }
   }
+
   refetch() {
     this.fetched = false;
   }
 
   //added
   handlefriend(friend) {
-    // e.preventDefault()
-
     if (friend.followed_by_current_user) {
       this.refetch();
       this.props.deleteFriend(friend.id).then(() => {
@@ -48,28 +44,6 @@ class FriendshipsIndex extends React.Component {
       });
     }
   }
-
-  // isFriend() {
-  //   if (!this.props.profile.followings) { return null }
-  //   let friendListIds = [];
-  //   let emptyArr = [];
-  //   let arr = emptyArr.concat((this.props.profile.followers), (this.props.profile.followings))
-  //   for (let i = 0; i < arr.length; i++) {
-  //     for (const key in arr[i]) {
-  //       if (!friendListIds.includes(arr[i][key])) {
-  //         friendListIds.push(arr[i][key])
-  //       }
-  //     }
-  //   }
-   
-  //   return (
-  //     <div>
-  //       {friendListIds.map(id => (
-  //         <div key={id}>{this.props.users[id]}</div>
-  //       ))}
-  //     </div>
-  //   )
-  // }
 
 
   render() {
