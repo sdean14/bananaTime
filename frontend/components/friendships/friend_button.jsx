@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 //make friends logic and button for list
 class FriendButton extends React.Component {
@@ -45,8 +44,6 @@ class FriendButton extends React.Component {
           this.setState({ followed: true });
         });
       }
-      // this.forceUpdate()
-      // window.location.reload()
     }
     
     render(){
