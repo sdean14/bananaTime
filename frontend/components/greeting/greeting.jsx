@@ -25,7 +25,8 @@ class Greeting extends React.Component{
         </Link>
         
         <div>
-          <a href="https://github.com/sdean14/bananaTime"><i className='icon-img' className="fas fa-code-branch"></i></a>
+          <a href="https://www.linkedin.com/in/satomi-dean-3ab13b105/"><i className='icon-img' className="fab fa-linkedin"></i></a>
+          {/* <a href="https://github.com/sdean14/bananaTime"><i  className="fas fa-code-branch"></i></a> */}
         </div>
 
         <div>
