@@ -14,7 +14,6 @@ const mDTP = (dispatch) => {
   return({
     createComment: (comment) => dispatch(createComment(comment)),
     fetchPost: (postId) => dispatch(fetchPost(postId)),
-
   })
 }
 
