@@ -22,7 +22,6 @@ class CommentForm extends React.Component {
     this.props.createComment(this.state);
 
     this.setState({ 'body': '' })
-
   }
 
   keyPress(e) {
