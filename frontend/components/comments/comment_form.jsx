@@ -29,7 +29,6 @@ class CommentForm extends React.Component {
       
     } else if (e.which === 13) {
       this.handleSubmit(e)
-
     }
   }
 
