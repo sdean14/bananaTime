@@ -42,7 +42,6 @@ class CommentIndex extends React.Component {
     return (
       <div>
         { this.renderComment()}
-
       </div>
     )
   }
