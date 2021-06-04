@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-// import { logoutCurrentUser } from '../../actions/session_action';
-// import FriendshipsIndex from '../friendships/friendships_index'
-// import FriendshipContainer from '../friendships/friendships_container';
 import PostFormContainer from '../posts/post_create_form_container'
 import FriendButtonContainer from '../friendships/friend_button_container';
 import CommentIndexContainer from '../comments/comment_index_container';
