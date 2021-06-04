@@ -130,7 +130,7 @@ class ProfileForm extends React.Component {
           <div className='mask'></div>
           <div className='dropdown'>
             <div>
-              <p className='intro'>Bio</p>
+              <p className='modal-title'>Bio</p>
               <p className='p'><i className="fas fa-user intro-fab"></i>Name: {this.props.profile.username}</p>
               <p className='p'><i className="fas fa-birthday-cake intro-fab"></i>Bithday: {this.props.profile.birthday} </p>
               <p className='p'><i className="fas fa-home intro-fab"></i>Lives in: {this.props.profile.location} </p>
@@ -148,7 +148,7 @@ class ProfileForm extends React.Component {
         <div className='modal-con'>
           <div className='mask'></div>
           <div className='dropdown'>
-            <h2>Friends {this.props.profile.username} is following</h2>
+            <h2 className='modal-title'>Friends {this.props.profile.username} is following</h2>
             {this.renderFriendList()}
           </div>
         </div>
