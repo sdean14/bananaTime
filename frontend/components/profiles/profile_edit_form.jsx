@@ -14,12 +14,6 @@ class ProfileEditForm extends React.Component {
         this.props.fetchUser(this.props.match.params.userId)
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.props.updateProfile(this.state);
-    //     // this.setState({ redirect: `/users/${this.state.id}/show`})
-    // }
-
     handleFile(e) {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
