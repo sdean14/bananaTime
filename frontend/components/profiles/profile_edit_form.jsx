@@ -40,8 +40,6 @@ class ProfileEditForm extends React.Component {
         this.setState({ redirect: `/users/${this.state.id}/show` })
     }
 
-
-
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
