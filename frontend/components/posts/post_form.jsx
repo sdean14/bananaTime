@@ -31,7 +31,6 @@ class PostForm extends React.Component {
       <div className={this.props.formType === 'Update Post' ? 'update-container new-post-form' : 'new-post-form'}>
         <h3>{this.props.formType}</h3>
         <form onSubmit={this.handleSubmit}>
-          {/* <h3>{this.props.users.username}</h3> */}
             <input
               type='text'
               value={this.state.body}

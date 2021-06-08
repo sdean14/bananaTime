@@ -9,21 +9,25 @@ class EditPostForm extends React.Component {
   }
 
   render() {
-     const { action, formType, post } = this.props;
+    const { action, formType, post } = this.props;
 
     if (!post) return null;
     return (
-      <PostForm
-        action={action}
-        formType={formType}
-        post={post} />
+      <div className='edit-post-page'>
+        <PostForm
+          action={action}
+          formType={formType}
+          post={post} />
+      </div>
     );
   }
 }
 
 const mSTP = (state, ownProps) => {
-return( { post: state.posts[ownProps.match.params.postId],
-  formType: 'Update Post'})
+  return ({
+    post: state.posts[ownProps.match.params.postId],
+    formType: 'Update Post'
+  })
 };
 
 const mDTP = dispatch => ({
