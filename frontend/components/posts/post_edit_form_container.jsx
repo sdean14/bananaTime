@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PostForm from './post_form';
 import { fetchPost, updatePost } from '../../actions/post_actions';
 
-
 class EditPostForm extends React.Component {
   componentDidMount() {
     this.props.fetchPost(this.props.match.params.postId);
@@ -14,6 +13,7 @@ class EditPostForm extends React.Component {
 
     if (!post) return null;
     return (
+      // <div></div>
       <PostForm
         action={action}
         formType={formType}
