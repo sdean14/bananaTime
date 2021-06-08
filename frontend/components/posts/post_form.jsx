@@ -28,7 +28,7 @@ class PostForm extends React.Component {
       return <Redirect to={this.state.redirect}></Redirect>
     }
     return (
-      <div className='new-post-form'>
+      <div className={this.props.formType === 'Update Post' ? 'update-container new-post-form' : 'new-post-form'}>
         <h3>{this.props.formType}</h3>
         <form onSubmit={this.handleSubmit}>
           {/* <h3>{this.props.users.username}</h3> */}
