@@ -13,7 +13,6 @@ class EditPostForm extends React.Component {
 
     if (!post) return null;
     return (
-      // <div></div>
       <PostForm
         action={action}
         formType={formType}
