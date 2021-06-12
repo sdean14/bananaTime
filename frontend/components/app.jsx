@@ -39,7 +39,6 @@ const App = () => (
       <Route exact path="/following" component={FriendshipContainer} />
       <Route exact path="/users/index" component={UserIndexContainer} />
 
-      {/* <Route exact path="/toggle" component={FriendButtonContainer} /> */}
       <Route component={NoMatchPage} />
     </Switch>
   </div>
