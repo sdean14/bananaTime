@@ -58,7 +58,7 @@ class FriendshipsIndex extends React.Component {
       }
     });
     return (
-      <div>
+      <div className='follow-page'>
         <div className='list-of-friends-you-follow'>
           <h2 className='friends'>Friends List</h2>
          
