@@ -10,7 +10,6 @@ import PostItemContainer from './posts/post_item_container';
 import PostEditFormContainer from './posts/post_edit_form_container';
 import PostFormContainer from './posts/post_create_form_container'
 import FriendshipContainer from './friendships/friendships_container';
-// import FriendButtonContainer from './friendships/friend_button_container';
 import UserIndexContainer from './users/user-index-container';
 
 const NoMatchPage = () => {
