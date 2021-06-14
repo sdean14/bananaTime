@@ -59,13 +59,13 @@ class ProfileEditForm extends React.Component {
                 <form className='profile-edit-form' onSubmit={this.handleSubmit}>
                     <p>Profile</p>
                     <label className='edit-p label'>Name:
-                    <input className='edit-p'
+                        <input className='edit-p'
                             type='text'
                             value={this.state.username}
                             onChange={this.update('username')} />
                     </label>
                     <label className='edit-p label'>Birthday:
-                    <input
+                        <input
                             className='edit-p'
                             type='date'
                             value={this.state.birthday}
@@ -73,13 +73,13 @@ class ProfileEditForm extends React.Component {
 
                     </label>
                     <label className='edit-p label'>Lives in:
-                    <input className='edit-p'
+                        <input className='edit-p'
                             type='text'
                             value={this.state.location}
                             onChange={this.update('location')} />
                     </label>
                     <label className='edit-p label'>Works at:
-                    <input className='edit-p'
+                        <input className='edit-p'
                             type='text'
                             value={this.state.work}
                             onChange={this.update('work')} />
@@ -87,15 +87,13 @@ class ProfileEditForm extends React.Component {
 
 
                     <label className='edit-p label'>Profile Photo:
-                    <input type="file"
-                            onChange={this.handleFile.bind(this)} 
+                        <input type="file"
+                            onChange={this.handleFile.bind(this)}
                             className='photo-upload' />
                     </label>
                     {preview}
 
-                    {/* <Link to={`/users/${this.state.id}/show`}> */}
                     <button className='profile-edit-button' type='submit'>Update Profile</button>
-                    {/* </Link> */}
 
                 </form>
                 {director()}
