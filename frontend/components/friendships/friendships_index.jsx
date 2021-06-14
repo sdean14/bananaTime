@@ -26,7 +26,6 @@ class FriendshipsIndex extends React.Component {
     this.fetched = false;
   }
 
-  //added
   handlefriend(friend) {
     if (friend.followed_by_current_user) {
       this.refetch();
@@ -61,28 +60,28 @@ class FriendshipsIndex extends React.Component {
       <div className='follow-page'>
         <div className='list-of-friends-you-follow'>
           <h2 className='friends'>Friends List</h2>
-         
+
 
           <ul>
-            { friendsYouFollow.map((friend, idx) => {
-                return(
-                  <li className='per-friend' key={idx}>
-                   
-                   <Link to={`/users/${friend.id}/show`} className='per-friendname'>{friend.username}</Link>
-         
+            {friendsYouFollow.map((friend, idx) => {
+              return (
+                <li className='per-friend' key={idx}>
+
+                  <Link to={`/users/${friend.id}/show`} className='per-friendname'>{friend.username}</Link>
+
                   <FriendIndexItem
-                   refetch={this.refetch.bind(this)}
-                   friend={friend}
-                   profile={this.props.profile}
-                   createFriend={this.props.createFriend}
-                   deleteFriend={this.props.deleteFriend}
-                   handlefriend={this.handlefriend} />  
-                 </li> 
-                   );
-                })}
+                    refetch={this.refetch.bind(this)}
+                    friend={friend}
+                    profile={this.props.profile}
+                    createFriend={this.props.createFriend}
+                    deleteFriend={this.props.deleteFriend}
+                    handlefriend={this.handlefriend} />
+                </li>
+              );
+            })}
           </ul>
 
-        </div> 
+        </div>
       </div>
     )
   }

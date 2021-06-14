@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 const FriendIndexItem = ({ refetch, friend, profile, handlefriend}) => (
   <div className='per-friend-button'>   
 
