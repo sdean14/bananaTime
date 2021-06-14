@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import PostIndexItem from './post_index_item';
 import PostCreateFormContainer from './post_create_form_container';
 import UserIndexContainer from '../users/user-index-container';
-// import FriendshipContainer from '../friendships/friendships_container';
-
 
 class PostIndex extends React.Component{
   constructor(props){
