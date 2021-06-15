@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+
 class ProfileEditForm extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +19,6 @@ class ProfileEditForm extends React.Component {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-
             this.setState({ photoFile: file, photoUrl: fileReader.result });
         };
         if (file) {
