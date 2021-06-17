@@ -1,8 +1,8 @@
 import React from "react";
 import UserIndexItem from './user_index_item'
 
-class UserIndex extends React.Component{
-  constructor(props){
+class UserIndex extends React.Component {
+  constructor(props) {
     super(props)
   }
   componentDidMount() {
@@ -10,24 +10,24 @@ class UserIndex extends React.Component{
     this.props.fetchUser(this.props.currentUser.id);
 
   }
-  
-  render(){
+
+  render() {
     let otherUsers = [];
     for (let i = 0; i < this.props.users.length; i++) {
-      if(this.props.users[i].id !== this.props.currentUser.id){
+      if (this.props.users[i].id !== this.props.currentUser.id) {
         otherUsers.push(this.props.users[i])
-      }      
+      }
     }
-      return(
-        <ul>
-          {otherUsers.map(user => (
-            <UserIndexItem
-              user={user}
-              key={user.id}
-            />
-            ))}
-        </ul>
-      ) 
+    return (
+      <ul>
+        {otherUsers.map(user => (
+          <UserIndexItem
+            user={user}
+            key={user.id}
+          />
+        ))}
+      </ul>
+    )
   }
 }
 
