@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PostFormContainer from '../posts/post_create_form_container'
 import FriendButtonContainer from '../friendships/friend_button_container';
 import CommentIndexContainer from '../comments/comment_index_container';
