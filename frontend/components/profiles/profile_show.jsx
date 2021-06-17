@@ -11,7 +11,6 @@ class ProfileForm extends React.Component {
     this.state = {
       page: 'timeline'
     }
-
     this.renderFriendList = this.renderFriendList.bind(this)
   }
 
