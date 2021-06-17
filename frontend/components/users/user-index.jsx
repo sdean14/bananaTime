@@ -1,5 +1,4 @@
 import React from "react";
-import { Route, Link } from 'react-router-dom';
 import UserIndexItem from './user_index_item'
 
 class UserIndex extends React.Component{
