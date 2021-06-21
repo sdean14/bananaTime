@@ -1,4 +1,3 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session_action';
 import {FRIEND, UNFRIEND } from '../actions/friendship_actions';
 import { merge } from 'lodash';
 
@@ -16,7 +15,6 @@ const friendshipsReducer = (oldState={}, action) => {
     default:
       return oldState;
   }
-
 }
 
 export default friendshipsReducer;
