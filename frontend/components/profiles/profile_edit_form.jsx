@@ -54,7 +54,7 @@ class ProfileEditForm extends React.Component {
         }
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
-            <div>
+            <div className='prof-edit-page'>
 
                 <form className='profile-edit-form' onSubmit={this.handleSubmit}>
                     <p>Profile</p>
