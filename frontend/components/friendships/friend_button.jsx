@@ -26,7 +26,8 @@ class FriendButton extends React.Component {
       this.props.fetchUsers();
       this.props.fetchUser(this.props.profile.id); 
     }
-    
+
+    //add request pending/undo request, accept request function  
     handlefriend(e){
       if (this.props.profile.followed_by_current_user){
         this.refetch();
