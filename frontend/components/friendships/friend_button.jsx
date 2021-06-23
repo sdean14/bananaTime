@@ -36,7 +36,6 @@ class FriendButton extends React.Component {
         this.props.deleteFriend(this.props.profile.id).then(() => {
           this.setState({ followed: false });
         });
-
       } else {
         this.refetch();
         let fbtn = document.querySelector('.friend-button');
