@@ -48,7 +48,6 @@ class PostIndex extends React.Component{
 
           <div className='left-sidebar-colum'>
             <div className='list'>
-
               <div><Link to={`/users/${this.props.currentUser.id}/show`}>{this.props.currentUser.username}'s Profile</Link></div>
             </div>
             <div className='list'>
@@ -64,9 +63,14 @@ class PostIndex extends React.Component{
               <div><a href="https://github.com/sdean14/bananaTime">Tomobook</a></div>
             </div>
             <div className='list'>
-              <div><i className='icon-img' className="fas fa-portrait"></i></div>
-              <div><a href="https://www.linkedin.com/in/satomi-dean-3ab13b105/">Satomi Dean</a></div>
+              <div><i className='icon-img' className="fab fa-linkedin"></i></div>
+              <div><a href="https://www.linkedin.com/in/satomi-dean-3ab13b105/">Linkedin</a></div>
             </div>
+            <div className='list'>
+              <div><i className='icon-img' className="fas fa-portrait"></i></div>
+              <div><a href="https://satomi-dean.com/">Satomi Dean</a></div>
+            </div>
+
           </div>
 
         </div>
