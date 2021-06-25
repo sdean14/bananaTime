@@ -70,7 +70,6 @@ class PostIndex extends React.Component{
               <div><i className='icon-img' className="fas fa-portrait"></i></div>
               <div><a href="https://satomi-dean.com/">Satomi Dean</a></div>
             </div>
-
           </div>
 
         </div>
