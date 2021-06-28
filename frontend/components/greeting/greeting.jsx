@@ -13,7 +13,6 @@ class Greeting extends React.Component {
     }
   }
 
-
   render() {
 
     const personalGreeting = () => (
@@ -35,6 +34,7 @@ class Greeting extends React.Component {
         <button className="header-logout-button" onClick={this.props.logout}>Log Out</button>
       </hgroup>
     );
+    
     return (
       this.props.currentUser ? personalGreeting() : <Redirect to="/login" />
     )
