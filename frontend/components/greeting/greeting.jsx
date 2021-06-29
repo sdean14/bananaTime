@@ -24,7 +24,6 @@ class Greeting extends React.Component {
         <div>
           <a href="https://www.linkedin.com/in/satomi-dean-3ab13b105/"><i className='icon-img' className="fab fa-linkedin"></i></a>
         </div>
-
         <div>
           <a href="https://github.com/sdean14"><i className='icon-img' className="fab fa-github"></i></a>
         </div>
