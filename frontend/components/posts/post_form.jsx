@@ -39,7 +39,6 @@ class PostForm extends React.Component {
             />
           <br/>
           <button className='button-post' type='submit' value={this.props.formType} >Post</button>
-
         </form>
       </div>
     );
