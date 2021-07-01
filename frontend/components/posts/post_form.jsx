@@ -6,7 +6,6 @@ class PostForm extends React.Component {
     super(props);
     this.state = this.props.post;
     this.state.redirect = null;
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
