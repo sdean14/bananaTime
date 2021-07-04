@@ -40,7 +40,7 @@ class PostIndex extends React.Component{
                   post={post}
                   deletePost={this.props.deletePost}
                   key={idx} />
-                  ))}
+                  ))} 
               
               </ul>
             </div>

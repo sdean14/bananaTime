@@ -10,7 +10,7 @@ class PostForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault();  
     this.props.action(this.state);
     if (this.props.formType === 'Update Post') {
       this.setState({ redirect: '/' })

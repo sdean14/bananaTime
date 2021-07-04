@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+ import { connect } from 'react-redux';
 import React from 'react';
 import ProfileForm from './profile_show';
 import { receiveCurrentUser } from '../../actions/session_action';
