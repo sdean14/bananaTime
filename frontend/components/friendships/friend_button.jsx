@@ -18,6 +18,7 @@ class FriendButton extends React.Component {
         }
       }
     }
+    
     refetch() {
       this.fetched = false;
     }
