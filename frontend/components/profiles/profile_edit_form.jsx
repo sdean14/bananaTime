@@ -85,14 +85,12 @@ class ProfileEditForm extends React.Component {
                             onChange={this.update('work')} />
                     </label>
 
-
                     <label className='edit-p label'>Profile Photo:
                         <input type="file"
                             onChange={this.handleFile.bind(this)}
                             className='photo-upload' />
                     </label>
                     {preview}
-
                     <button className='profile-edit-button' type='submit'>Update Profile</button>
 
                 </form>
