@@ -5,10 +5,10 @@ class UserIndex extends React.Component {
   constructor(props) {
     super(props)
   }
+
   componentDidMount() {
     this.props.fetchUsers();
     this.props.fetchUser(this.props.currentUser.id);
-
   }
 
   render() {
