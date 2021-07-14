@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -33,6 +32,7 @@ class SessionForm extends React.Component {
       password: '123456',
     });
   }
+  
   componentDidMount() {
     if (this.props.errors.length) { this.props.clearSessionErrors() }
   }
