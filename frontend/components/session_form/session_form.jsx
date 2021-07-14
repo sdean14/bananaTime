@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
       password: '123456',
     });
   }
-  
+
   componentDidMount() {
     if (this.props.errors.length) { this.props.clearSessionErrors() }
   }
@@ -74,15 +74,14 @@ class SessionForm extends React.Component {
   }
 
   render() {
+
     return (
       <div>
-
         <div className='header-for-form'>
           <div className='splash-header'>
             <h1 className='splash-logo'>Tomobook</h1>
             <h2 className='splash-title'>Connect with friends and the world around you on Tomobook.</h2>
           </div>
-
 
           <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
