@@ -1,4 +1,3 @@
-
 export const fetchComments = () => (
   $.ajax({
     url: `api/comments/`
