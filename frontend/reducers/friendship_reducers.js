@@ -1,17 +1,17 @@
-import {FRIEND, UNFRIEND } from '../actions/friendship_actions';
+import { FRIEND, UNFRIEND } from '../actions/friendship_actions';
 import { merge } from 'lodash';
 
-const friendshipsReducer = (oldState={}, action) => {
+const friendshipsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case FRIEND:
       return merge({}, oldState, {
         [action.follow.id]: action.follow
-    });
+      });
     case UNFRIEND:
       let newState = merge({}, oldState);
       delete newState[action.follow.id];
-      return newState;;  
+      return newState;;
     default:
       return oldState;
   }
