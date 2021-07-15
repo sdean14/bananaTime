@@ -4,11 +4,6 @@ export const createFriend = id => (
     method: 'POST',
     data: { id }
   })
-  // $.ajax({
-  //   method: 'POST',
-  //   url: '/api/friendships',
-  //   data: {user}
-  // })
 );
 
 export const deleteFriend = id => (
