@@ -1,4 +1,3 @@
-
 export const fetchPosts = () => (
   $.ajax({
     url: `api/posts/`
