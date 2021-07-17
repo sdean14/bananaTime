@@ -21,11 +21,3 @@ export const updateProfile = (formData, id) => (
     processData: false
   })  
 );  
-
-// $.ajax({
-//   url: '/api/users',
-//   method: 'POST',
-//   data: formData,
-//   contentType: false,
-//   processData: false
-// })
