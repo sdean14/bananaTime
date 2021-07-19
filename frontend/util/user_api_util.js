@@ -19,5 +19,5 @@ export const updateProfile = (formData, id) => (
     data: formData,
     contentType: false,
     processData: false
-  })  
-);  
+  })
+);

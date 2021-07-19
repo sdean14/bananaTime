@@ -1,9 +1,4 @@
 class Api::FriendshipsController < ApplicationController
- 
-  # def index
-  #   # make arr of followees & followers
-  #   # pass to jbuilder so you have access to arr of followers and followees 
-  # end
 
   def create
     @follow = Friendship.new
